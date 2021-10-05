@@ -7,6 +7,7 @@ import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 public class HelloApplication extends Application {
     @Override
@@ -20,8 +21,9 @@ public class HelloApplication extends Application {
         stage.show();
     }
 
-    public static void main(String[] args) {
-        DictionaryManager.checkConnection();
+    public static void main(String[] args) throws SQLException {
+        String input = "help";
+        String s = DictionaryManager.searchWord(input);
         launch();
     }
 }
