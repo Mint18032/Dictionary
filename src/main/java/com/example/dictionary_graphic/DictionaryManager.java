@@ -69,5 +69,26 @@ public class DictionaryManager {
     /**
      * Fix Word.
      */
+    public static void fixWord(String word, String detail ) throws SQLException {
+        String sqlFixData = "update dictionary set detail = ? where word = ? ";
+        preparedness = connection.prepareStatement(sqlFixData);
 
+        preparedness.setString(1, detail);
+        preparedness.setString(2, word);
+
+        preparedness.executeUpdate();
+    }
+
+    public static void getAllWord() throws SQLException {
+        String sqlGetAllWord = "SELECT * FROM dictionary";
+        Statement st = connection.createStatement();
+        ResultSet resultSet = st.executeQuery(sqlGetAllWord);
+        while (resultSet.next()) {
+            String word = resultSet.getString("word");
+            String detail = resultSet.getString("detail");
+            Word words = new Word(word,detail);
+            System.out.println(word + " : " + detail);
+        }
+        st.close();
+    }
 }
