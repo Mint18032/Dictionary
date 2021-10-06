@@ -51,18 +51,19 @@ public class DictionaryManager {
         preparedness.setString(2,detail);
 
         preparedness.executeUpdate();
+        System.out.println("Insert successful");
     }
 
     /**
      * Delete word from the database.
      */
     public static void deleteWord(final String word) throws SQLException {
-        final String sqlDeleteData = "delete from dictionary where word=?";
+        final String sqlDeleteData = "delete from dictionary where word = ?";
         preparedness = connection.prepareStatement(sqlDeleteData);
 
+        preparedness.setString(1,word);
         preparedness.executeUpdate();
+        System.out.println("Delete successful");
     }
-
-
 
 }

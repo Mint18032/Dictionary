@@ -1,55 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" prefHeight="394.0" prefWidth="421.0" spacing="20.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.HelloController">
+<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.dictionary_graphic.HelloController">
     <children>
         <TabPane prefHeight="399.0" prefWidth="422.0" tabClosingPolicy="UNAVAILABLE">
-            <tabs>
-                <Tab text="Translate">
-                    <content>
-                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                            <children>
-                                <ButtonBar accessibleRole="TEXT_AREA" layoutX="14.0" layoutY="14.0" prefHeight="40.0" prefWidth="400.0">
-                                    <buttons>
-                                        <Button mnemonicParsing="false" text="Search" onMouseClicked="#onSearchButtonClick"/>
-                                    </buttons>
-                                </ButtonBar>
-                            </children>
-                            <Label fx:id="welcomeText"/>
-                        </AnchorPane>
-                    </content>
-                </Tab>
-                <Tab text="Custom">
-                    <content>
-                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="336.0" prefWidth="422.0">
-                            <children>
-                                <Button layoutX="97.0" layoutY="82.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="216.0" text="Add new word" textAlignment="CENTER" textOverrun="CENTER_WORD_ELLIPSIS">
-                                    *{  background-color: green
-                                    border-color: green
-                                    tooltip="Click to search.";}
-                                    <font>
-                                        <Font name="Berlin Sans FB" size="18.0" />
-                                    </font>
-                                </Button>
-                                <Button layoutX="97.0" layoutY="154.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="216.0" text="Fix word" textAlignment="CENTER" textOverrun="CENTER_WORD_ELLIPSIS">
-                                    <font>
-                                        <Font name="Berlin Sans FB" size="18.0" />
-                                    </font>
-                                </Button>
-                                <Button layoutX="97.0" layoutY="221.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="216.0" text="Delete word" textAlignment="CENTER" textOverrun="CENTER_WORD_ELLIPSIS">
-                                    <font>
-                                        <Font name="Berlin Sans FB" size="18.0" />
-                                    </font>
-                                </Button>
-                            </children>
-                        </AnchorPane>
-                    </content>
-                </Tab>
-            </tabs>
+            <Tab text="Translate">
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                    <children>
+                        <ButtonBar accessibleRole="TEXT_AREA" layoutX="14.0" layoutY="14.0" prefHeight="40.0" prefWidth="400.0">
+                            <buttons>
+                                <Button mnemonicParsing="false" text="Search" onMouseClicked="#onSearchButtonClick"/>
+                            </buttons>
+                        </ButtonBar>
+                    </children>
+                    <Label fx:id="welcomeText"/>
+                </AnchorPane>
+            </Tab>
+            <Tab text="Custom">
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="336.0" prefWidth="422.0">
+                    <children>
+                        <Button layoutX="97.0" layoutY="82.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="216.0" text="Add new word" textAlignment="CENTER" textOverrun="CENTER_WORD_ELLIPSIS">
+                            *{  background-color: green
+                            border-color: green
+                            tooltip="Click to search.";}
+                            <font>
+                                <Font name="Berlin Sans FB" size="18.0" />
+                            </font>
+                        </Button>
+                        <Button layoutX="97.0" layoutY="154.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="216.0" text="Fix word" textAlignment="CENTER" textOverrun="CENTER_WORD_ELLIPSIS">
+                            <font>
+                                <Font name="Berlin Sans FB" size="18.0" />
+                            </font>
+                        </Button>
+                        <Button layoutX="97.0" layoutY="221.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="216.0" text="Delete word" textAlignment="CENTER" textOverrun="CENTER_WORD_ELLIPSIS">
+                            <font>
+                                <Font name="Berlin Sans FB" size="18.0" />
+                            </font>
+                        </Button>
+                    </children>
+                </AnchorPane>
+            </Tab>
         </TabPane>
     </children>
 </VBox>
