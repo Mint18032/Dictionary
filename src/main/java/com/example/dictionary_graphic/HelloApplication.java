@@ -13,7 +13,7 @@ public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
+        Scene scene = new Scene(fxmlLoader.load());
         Image logo = new Image("/com/example/dictionary_graphic/logo.jpg");
         stage.getIcons().add(logo);
         stage.setTitle("Khanh & Minh Dictionary");
@@ -26,6 +26,18 @@ public class HelloApplication extends Application {
         String s = DictionaryManager.searchWord(input);
         String khanh = "khanh";
         DictionaryManager.deleteWord(khanh);
+        String ins = "file";
+        DictionaryCommandline.dictionaryAdvanced(ins);
+        ins = "insert";
+        DictionaryCommandline.dictionaryAdvanced(ins);
+//        ins = "delete";
+//        DictionaryCommandline.dictionaryAdvanced(ins);
+        ins = "show";
+        DictionaryCommandline.dictionaryAdvanced(ins);
+//        DictionaryCommandline.dictionaryAdvanced("fix");
+//        ins = "lookup";
+//        DictionaryCommandline.dictionaryAdvanced(ins);
+//        DictionaryCommandline.dictionaryAdvanced("search");
         launch();
     }
 }
