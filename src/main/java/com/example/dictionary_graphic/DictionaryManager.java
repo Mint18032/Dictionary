@@ -51,7 +51,7 @@ public class DictionaryManager {
         preparedness.setString(2,detail);
 
         preparedness.executeUpdate();
-        System.out.println("Insert successful");
+        System.out.println("Inserted successfully");
     }
 
     /**
@@ -63,7 +63,7 @@ public class DictionaryManager {
 
         preparedness.setString(1,word);
         preparedness.executeUpdate();
-        System.out.println("Delete successful");
+        System.out.println("Deleted successfully");
     }
 
     /**

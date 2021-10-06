@@ -24,20 +24,8 @@ public class HelloApplication extends Application {
     public static void main(String[] args) throws SQLException {
         String input = "help";
         String s = DictionaryManager.searchWord(input);
-        String khanh = "khanh";
-        DictionaryManager.deleteWord(khanh);
-        String ins = "file";
-        DictionaryCommandline.dictionaryAdvanced(ins);
-        ins = "insert";
-        DictionaryCommandline.dictionaryAdvanced(ins);
-//        ins = "delete";
-//        DictionaryCommandline.dictionaryAdvanced(ins);
-        ins = "show";
-        DictionaryCommandline.dictionaryAdvanced(ins);
-//        DictionaryCommandline.dictionaryAdvanced("fix");
-//        ins = "lookup";
-//        DictionaryCommandline.dictionaryAdvanced(ins);
-//        DictionaryCommandline.dictionaryAdvanced("search");
+//        String khanh = "khanh";
+//        DictionaryManager.deleteWord(khanh);
         launch();
     }
 }

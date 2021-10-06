@@ -11,4 +11,20 @@ public class HelloController {
     protected void onSearchButtonClick() {
         welcomeText.setText("You searched!");
     }
+
+    @FXML
+    protected void onAddButtonClick() {
+        String ins = "file";
+        DictionaryCommandline.dictionaryAdvanced(ins);
+//        ins = "insert";
+//        DictionaryCommandline.dictionaryAdvanced(ins);
+//        ins = "delete";
+//        DictionaryCommandline.dictionaryAdvanced(ins);
+        ins = "show";
+        DictionaryCommandline.dictionaryAdvanced(ins);
+//        DictionaryCommandline.dictionaryAdvanced("fix");
+//        ins = "lookup";
+//        DictionaryCommandline.dictionaryAdvanced(ins);
+//        DictionaryCommandline.dictionaryAdvanced("search");
+    }
 }

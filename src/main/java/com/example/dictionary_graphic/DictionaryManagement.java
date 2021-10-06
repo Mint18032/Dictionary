@@ -37,7 +37,7 @@ public class DictionaryManagement {
      * Insert from File.
      */
     public static void insertFromFile() {
-        String file = "src/Dictionary.txt";
+        String file = "src/main/resources/Dictionary.txt";
         try {
             BufferedReader reader = new BufferedReader(new FileReader(file));
             String line;
