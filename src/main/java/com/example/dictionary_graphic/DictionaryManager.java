@@ -57,13 +57,17 @@ public class DictionaryManager {
     /**
      * Delete word from the database.
      */
-    public static void deleteWord(final String word) throws SQLException {
-        final String sqlDeleteData = "delete from dictionary where word = ?";
+    public static void deleteWord(String word) throws SQLException {
+        String sqlDeleteData = "delete from dictionary where word = ?";
         preparedness = connection.prepareStatement(sqlDeleteData);
 
         preparedness.setString(1,word);
         preparedness.executeUpdate();
         System.out.println("Delete successful");
     }
+
+    /**
+     * Fix Word.
+     */
 
 }
