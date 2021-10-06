@@ -22,10 +22,11 @@ public class HelloApplication extends Application {
     }
 
     public static void main(String[] args) throws SQLException {
-        String input = "help";
-        String s = DictionaryManager.searchWord(input);
+//        String input = "help";
+//        String s = DictionaryManager.searchWord(input);
 //        String khanh = "khanh";
 //        DictionaryManager.deleteWord(khanh);
+        DictionaryManager.getAllWord();
         launch();
     }
 }
