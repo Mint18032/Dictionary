@@ -1,6 +1,6 @@
 package com.example.dictionary_graphic;
 
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.Scanner;
 
 public class DictionaryCommandline {
@@ -20,7 +20,7 @@ public class DictionaryCommandline {
         System.out.println("Type the word you want to search:");
         Scanner in = new Scanner(System.in);
         String w = in.next().toLowerCase();
-        ArrayList<Word> list = Dictionary.getWords();
+        LinkedList<Word> list = Dictionary.getWords();
         boolean present = false;
         for (Word check : list) {
             if (check.getWord_target().contains(w)) {

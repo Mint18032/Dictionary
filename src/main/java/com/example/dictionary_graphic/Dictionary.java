@@ -1,10 +1,10 @@
 package com.example.dictionary_graphic;
-import java.util.ArrayList;
+import java.util.LinkedList;
 
 public class Dictionary {
-    private static ArrayList<Word> words = new ArrayList<Word>();
+    private static LinkedList<Word> words = new LinkedList<Word>();
 
-    public static ArrayList<Word> getWords() {
+    public static LinkedList<Word> getWords() {
         return words;
     }
 
@@ -41,7 +41,7 @@ public class Dictionary {
         }
     }
 
-    public static void setWords(ArrayList<Word> w) {
+    public static void setWords(LinkedList<Word> w) {
         words = w;
     }
 }

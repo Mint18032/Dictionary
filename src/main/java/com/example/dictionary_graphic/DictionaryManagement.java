@@ -1,7 +1,7 @@
 package com.example.dictionary_graphic;
 
 import java.io.*;
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
@@ -61,7 +61,7 @@ public class DictionaryManagement {
         System.out.println("Type the word you want to look up: ");
         Scanner scan = new Scanner(System.in);
         String w = scan.nextLine();
-//        w = w.toLowerCase();
+        w = w.toLowerCase();
         boolean present = false;
         for (Word check : Dictionary.getWords()) {
             if (check.getWord_target().equals(w)) {
@@ -85,7 +85,7 @@ public class DictionaryManagement {
         System.out.println("Type the word that you want to delete:");
         Scanner in = new Scanner(System.in);
         String w = in.next().toLowerCase();
-        ArrayList<Word> list = Dictionary.getWords();
+        LinkedList<Word> list = Dictionary.getWords();
         boolean present = false;
         for (Word check : list) {
             if (check.getWord_target().equals(w)) {
@@ -113,7 +113,7 @@ public class DictionaryManagement {
         Scanner in = new Scanner(System.in);
         String w = in.next().toLowerCase();
         String wexplain = in.next();
-        ArrayList<Word> list = Dictionary.getWords();
+        LinkedList<Word> list = Dictionary.getWords();
         boolean present = false;
         for (Word check : list) {
             if (check.getWord_target().equals(w)) {
