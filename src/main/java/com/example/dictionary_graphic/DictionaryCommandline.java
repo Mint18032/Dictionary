@@ -16,14 +16,14 @@ public class DictionaryCommandline {
     /**
      * Find the matching words.
      */
-    public static String dictionarySearcher(String w) {
-        String result = "";
+    public static LinkedList<String> dictionarySearcher(String w) {
+        LinkedList<String> result = new LinkedList<>();
         LinkedList<Word> list = Dictionary.getWords();
         for (Word check : list) {
             if (check.getWord_target().contains(w)) {
-                result += check.getWord_explain() + "\n";
+                result.add(check.getWord_explain());
             } else if (w.charAt(0) < check.getWord_target().charAt(0)) {
-                return "No matching word is found!";
+                break;
             }
         }
         return result;
