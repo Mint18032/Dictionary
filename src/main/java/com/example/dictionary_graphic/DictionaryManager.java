@@ -50,6 +50,7 @@ public class DictionaryManager {
 
         preparedness.executeUpdate();
         System.out.println("Inserted successfully");
+        DictionaryManager.getAllWord();
     }
 
     /**
@@ -62,6 +63,7 @@ public class DictionaryManager {
         preparedness.setString(1,word);
         preparedness.executeUpdate();
         System.out.println("Deleted successfully");
+        DictionaryManager.getAllWord();
     }
 
     /**
@@ -75,6 +77,7 @@ public class DictionaryManager {
         preparedness.setString(2, word);
 
         preparedness.executeUpdate();
+        DictionaryManager.getAllWord();
     }
 
     public static void getAllWord() throws SQLException {
