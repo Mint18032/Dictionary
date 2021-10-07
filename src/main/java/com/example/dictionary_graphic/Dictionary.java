@@ -35,6 +35,8 @@ public class Dictionary {
                 Word temp = words.get(i);
                 words.set(i, words.get(i-1));
                 words.set(i-1, temp);
+            } else {
+                break;
             }
         }
     }
