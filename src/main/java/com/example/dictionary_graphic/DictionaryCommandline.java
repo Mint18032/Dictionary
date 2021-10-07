@@ -16,23 +16,16 @@ public class DictionaryCommandline {
     /**
      * Find the matching words.
      */
-    public static void dictionarySearcher() {
-        System.out.println("Type the word you want to search:");
-        Scanner in = new Scanner(System.in);
-        String w = in.next().toLowerCase();
+    public static String dictionarySearcher(String w) {
+        String result = "";
         LinkedList<Word> list = Dictionary.getWords();
-        boolean present = false;
         for (Word check : list) {
             if (check.getWord_target().contains(w)) {
-                present = true;
-                System.out.println(check.getWord_target() + ": " + check.getWord_explain());
+                result += check.getWord_explain() + "\n";
             } else if (w.charAt(0) < check.getWord_target().charAt(0)) {
-                break;
+                return "No matching word is found!";
             }
         }
-        if (!present) {
-            System.out.println("No matching word is found!");
-        }
-        in.close();
+        return result;
     }
 }
