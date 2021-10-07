@@ -29,7 +29,7 @@ public class DictionaryManager {
 
         ResultSet rs = preparedness.executeQuery();
 
-        System.out.println("Search already!");
+        System.out.println("Searched already!");
 
         if (!rs.next()) {
             return "";

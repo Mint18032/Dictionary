@@ -1,4 +1,29 @@
 .button {
-    -fx-background-color: #00ff99;
+    -fx-background-color: #33cccc;
     -fx-border-color: #000000;
+}
+
+.button:hover {
+  -fx-background-color: #29a3a3;
+  -fx-border-color: #000000;
+}
+
+.tab {
+    -fx-padding: 14px 16px;
+    -fx-color: #33cccc;
+    -fx-background-color: #33cccc;
+    -fx-outline: none;
+    -fx-border: none;
+}
+
+.tab:hover {
+    -fx-background-color: #29a3a3;
+    -fx-padding: 14px 16px;
+    -fx-width: 10%;
+    -fx-border: none;
+    -fx-color: gray;
+}
+
+#explain {
+    -fx-padding: 0px;
 }
