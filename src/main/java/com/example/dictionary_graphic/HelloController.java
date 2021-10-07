@@ -21,21 +21,13 @@ public class HelloController {
     }
 
     @FXML
-    public void onSearchButtonClick(MouseEvent mouseEvent) throws SQLException {
+    public void onSearchButtonClick(MouseEvent mouseEvent) {
         target = searchBox.getText().trim();
         if (target == "") {
             result.setText("No word inserted!");
         } else {
-            try {
-                String exlpain = DictionaryManager.searchWord(target);
-                if (exlpain == "") {
-                    result.setText("No word found!");
-                } else {
-                    result.setText(exlpain);
-                }
-            } catch (SQLException e) {
-                throw e;
-            }
+            String exlpain = DictionaryManagement.dictionaryLookup(target);
+            result.setText(exlpain);
         }
     }
 }

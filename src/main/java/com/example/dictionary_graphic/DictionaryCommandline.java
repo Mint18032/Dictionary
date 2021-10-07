@@ -35,45 +35,4 @@ public class DictionaryCommandline {
         }
         in.close();
     }
-
-    /**
-     * Executes all commandline dictionary functions. Calls insertFromCommandline() and showAllWords().
-     */
-    public static void dictionaryBasic(String instruction) {
-        if (instruction.equals("insert")) {
-            DictionaryManagement.insertFromCommandline();
-        } else if (instruction.equals("show")) {
-            showAllWords();
-        }
-    }
-
-    /**
-     * Executes all commandline dictionary functions.
-     * Calls insertFromFile(), insertFromCommandline(), showAllWords() and dictionaryLookup().
-     */
-    public static void dictionaryAdvanced(String instruction) {
-        switch (instruction.toLowerCase()) {
-            case "insert":
-                DictionaryManagement.insertFromCommandline();
-                break;
-            case "file":
-                DictionaryManagement.insertFromFile();
-                break;
-            case "show":
-                showAllWords();
-                break;
-            case "delete":
-                DictionaryManagement.deleteWord();
-                break;
-            case "search":
-                dictionarySearcher();
-                break;
-            case "fix":
-                DictionaryManagement.fixWord();
-                break;
-            default:
-                DictionaryManagement.dictionaryLookup();
-                break;
-        }
-    }
 }
