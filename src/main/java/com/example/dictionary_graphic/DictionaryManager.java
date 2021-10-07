@@ -77,6 +77,9 @@ public class DictionaryManager {
         preparedness.executeUpdate();
     }
 
+    /**
+     * Get words from database to word list.
+     */
     public static void getAllWord() throws SQLException {
         String sqlGetAllWord = "SELECT * FROM dictionary";
         Statement st = connection.createStatement();
@@ -84,9 +87,8 @@ public class DictionaryManager {
         while (resultSet.next()) {
             String word = resultSet.getString("word");
             String detail = resultSet.getString("detail");
-            Word words = new Word(word,detail);
-            Dictionary.addWordFromDb(words);
-            //System.out.println(word + ":" + detail);
+            Word w = new Word(word,detail);
+            Dictionary.addWordFromDb(w);
         }
         st.close();
     }

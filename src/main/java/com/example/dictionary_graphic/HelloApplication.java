@@ -27,7 +27,7 @@ public class HelloApplication extends Application {
 //        String khanh = "khanh";
 //        DictionaryManager.deleteWord(khanh);
           DictionaryManager.getAllWord();
-          DictionaryCommandline.showAllWords();
-        //launch();
+//          DictionaryCommandline.showAllWords();
+          launch();
     }
 }

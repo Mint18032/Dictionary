@@ -1,44 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
 <VBox alignment="CENTER" spacing="20.0" stylesheets="@/com/example/dictionary_graphic/style.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dictionary_graphic.HelloController">
-    <TabPane prefHeight="399.0" prefWidth="422.0" tabClosingPolicy="UNAVAILABLE">
-        <Tab text="Translate">
-            <AnchorPane minHeight="10.0" minWidth="0.0" prefHeight="326.0" prefWidth="422.0">
-                <children>
-                    <ButtonBar accessibleRole="TEXT_AREA" layoutX="14.0" layoutY="14.0" prefHeight="35.0" prefWidth="400.0">
-                        <buttons>
-                            <Button mnemonicParsing="false" onMouseClicked="#onSearchButtonClick" prefHeight="30.0" prefWidth="40.0" styleClass="button" text="Search" />
-                        </buttons>
-                    </ButtonBar>
-                    <TextField fx:id="searchBox" layoutX="10.0" layoutY="14.0" prefHeight="35.0" prefWidth="320.0" />
-                </children>
-                <Label fx:id="welcomeText" layoutX="2.0" layoutY="91.0" prefHeight="270.0" prefWidth="414.0" />
-            </AnchorPane>
-        </Tab>
-        <Tab text="Custom">
-            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="336.0" prefWidth="422.0">
-                <children>
-                    <Button layoutX="101.0" layoutY="82.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="216.0" styleClass="button" text="Add new word" textAlignment="CENTER" textOverrun="CENTER_WORD_ELLIPSIS">
-                        <font>
-                            <Font name="Berlin Sans FB" size="18.0" />
-                        </font>
-                    </Button>
-                    <Button layoutX="101.0" layoutY="154.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="216.0" styleClass="button" text="Fix word" textAlignment="CENTER" textOverrun="CENTER_WORD_ELLIPSIS">
-                        <font>
-                            <Font name="Berlin Sans FB" size="18.0" />
-                        </font>
-                    </Button>
-                    <Button layoutX="101.0" layoutY="221.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="216.0" styleClass="button" text="Delete word" textAlignment="CENTER" textOverrun="CENTER_WORD_ELLIPSIS">
-                        <font>
-                            <Font name="Berlin Sans FB" size="18.0" />
-                        </font>
-                    </Button>
-                </children>
-            </AnchorPane>
-        </Tab>
-    </TabPane>
+   <children>
+        <TabPane prefHeight="399.0" prefWidth="422.0" tabClosingPolicy="UNAVAILABLE">
+            <Tab text="Translate">
+                <AnchorPane minHeight="10.0" minWidth="0.0" prefHeight="326.0" prefWidth="422.0" >
+                    <children>
+                        <ButtonBar accessibleRole="TEXT_AREA" layoutX="14.0" layoutY="14.0" prefHeight="35.0" prefWidth="400.0">
+                            <buttons>
+                                <Button onMouseClicked="#onSearchButtonClick" prefHeight="30.0" prefWidth="40.0" styleClass="button" text="Search" />
+                            </buttons>
+                        </ButtonBar>
+                        <TextField fx:id="searchBox" layoutX="10.0" layoutY="14.0" prefHeight="35.0" prefWidth="320.0" />
+                    </children>
+                    <Label fx:id="result" layoutX="2.0" layoutY="91.0" prefHeight="270.0" prefWidth="414.0" />
+                </AnchorPane>
+            </Tab>
+            <Tab text="Custom">
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="336.0" prefWidth="422.0">
+                    <children>
+                        <Button layoutX="101.0" layoutY="82.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="216.0" styleClass="button" text="Add new word" textAlignment="CENTER" textOverrun="CENTER_WORD_ELLIPSIS">
+                            <font>
+                                <Font name="Berlin Sans FB" size="18.0" />
+                            </font>
+                        </Button>
+                        <Button layoutX="101.0" layoutY="154.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="216.0" styleClass="button" text="Fix word" textAlignment="CENTER" textOverrun="CENTER_WORD_ELLIPSIS">
+                            <font>
+                                <Font name="Berlin Sans FB" size="18.0" />
+                            </font>
+                        </Button>
+                        <Button layoutX="101.0" layoutY="221.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="216.0" styleClass="button" text="Delete word" textAlignment="CENTER" textOverrun="CENTER_WORD_ELLIPSIS">
+                            <font>
+                                <Font name="Berlin Sans FB" size="18.0" />
+                            </font>
+                        </Button>
+                    </children>
+                </AnchorPane>
+            </Tab>
+        </TabPane>
+   </children>
 </VBox>

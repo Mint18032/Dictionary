@@ -2,29 +2,40 @@ package com.example.dictionary_graphic;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
+
+import java.awt.event.ActionEvent;
+import java.sql.SQLException;
 
 public class HelloController {
     @FXML
-    private Label welcomeText;
+    private Label result;
+    public TextField searchBox;
+
+    String target;
 
     @FXML
-    protected void onSearchButtonClick() {
-        welcomeText.setText("You searched!");
+    private void onAddButtonClick() {
+        System.out.println("You clicked!");
     }
 
     @FXML
-    protected void onAddButtonClick() {
-        String ins = "file";
-        DictionaryCommandline.dictionaryAdvanced(ins);
-//        ins = "insert";
-//        DictionaryCommandline.dictionaryAdvanced(ins);
-//        ins = "delete";
-//        DictionaryCommandline.dictionaryAdvanced(ins);
-        ins = "show";
-        DictionaryCommandline.dictionaryAdvanced(ins);
-//        DictionaryCommandline.dictionaryAdvanced("fix");
-//        ins = "lookup";
-//        DictionaryCommandline.dictionaryAdvanced(ins);
-//        DictionaryCommandline.dictionaryAdvanced("search");
+    public void onSearchButtonClick(MouseEvent mouseEvent) throws SQLException {
+        target = searchBox.getText().trim();
+        if (target == "") {
+            result.setText("No word inserted!");
+        } else {
+            try {
+                String exlpain = DictionaryManager.searchWord(target);
+                if (exlpain == "") {
+                    result.setText("No word found!");
+                } else {
+                    result.setText(exlpain);
+                }
+            } catch (SQLException e) {
+                throw e;
+            }
+        }
     }
 }
