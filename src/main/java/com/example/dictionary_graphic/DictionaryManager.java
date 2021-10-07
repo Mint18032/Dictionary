@@ -1,14 +1,12 @@
 package com.example.dictionary_graphic;
 import java.sql.*;
 import java.sql.SQLException;
+import java.util.LinkedList;
 
 public class DictionaryManager {
     public static java.sql.Connection connection;
     public static java.sql.PreparedStatement preparedness;
 
-    /**
-     * Dictionary Connection.
-     */
     static {
         try {
             connection = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/amitdb", "root", "khanhminh123@");
@@ -87,7 +85,8 @@ public class DictionaryManager {
             String word = resultSet.getString("word");
             String detail = resultSet.getString("detail");
             Word words = new Word(word,detail);
-            System.out.println(word + " : " + detail);
+            Dictionary.addWordFromDb(words);
+            //System.out.println(word + ":" + detail);
         }
         st.close();
     }

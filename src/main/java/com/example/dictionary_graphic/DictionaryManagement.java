@@ -1,6 +1,7 @@
 package com.example.dictionary_graphic;
 
 import java.io.*;
+import java.sql.SQLException;
 import java.util.LinkedList;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -85,24 +86,11 @@ public class DictionaryManagement {
         System.out.println("Type the word that you want to delete:");
         Scanner in = new Scanner(System.in);
         String w = in.next().toLowerCase();
-        LinkedList<Word> list = Dictionary.getWords();
-        boolean present = false;
-        for (Word check : list) {
-            if (check.getWord_target().equals(w)) {
-                present = true;
-                list.remove(check);
-                break;
-            } else if (w.charAt(0) < check.getWord_target().charAt(0)) {
-                break;
-            }
+        try {
+            DictionaryManager.deleteWord(w);
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
-        if (!present) {
-            System.out.println("This word doesn't exist or is already deleted!");
-        } else {
-            Dictionary.setWords(list);
-            System.out.println("The word is successfully deleted!");
-        }
-        in.close();
     }
 
     /**
@@ -113,39 +101,21 @@ public class DictionaryManagement {
         Scanner in = new Scanner(System.in);
         String w = in.next().toLowerCase();
         String wexplain = in.next();
-        LinkedList<Word> list = Dictionary.getWords();
-        boolean present = false;
-        for (Word check : list) {
-            if (check.getWord_target().equals(w)) {
-                present = true;
-                check.setWord_explain(wexplain);
-                break;
-            } else if (w.charAt(0) < check.getWord_target().charAt(0)) {
-                break;
-            }
+        try {
+            DictionaryManager.fixWord(w, wexplain);
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
-        if (!present) {
-            System.out.println("This word doesn't exist!");
-        } else {
-            Dictionary.setWords(list);
-            System.out.println("The word is successfully fixed!");
-        }
-        in.close();
+
     }
 
     /**
      * Export to file.
      */
     public static void exportToFile(Word word) {
-        String file = "src/Dictionary.txt";
         try {
-            BufferedWriter writer = new BufferedWriter(new FileWriter(file , true));
-            writer.write("\n" + word.getWord_target() + ": " + word.getWord_explain());
-            writer.close();
-
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
+            DictionaryManager.insertWord(word.getWord_target(), word.getWord_explain());
+        } catch (SQLException e) {
             e.printStackTrace();
         }
     }
