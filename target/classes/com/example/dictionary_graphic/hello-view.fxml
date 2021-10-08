@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
@@ -9,16 +8,18 @@
    <children>
         <TabPane prefHeight="399.0" prefWidth="422.0" tabClosingPolicy="UNAVAILABLE">
             <Tab text="Translate">
-                <AnchorPane minHeight="10.0" minWidth="0.0" prefHeight="326.0" prefWidth="422.0" >
+                <AnchorPane minHeight="10.0" minWidth="0.0" prefHeight="326.0" prefWidth="422.0">
                     <children>
+                        <ListView fx:id="listView" layoutX="10.0" layoutY="69.0" prefHeight="70.0" prefWidth="400.0" />
                         <ButtonBar accessibleRole="TEXT_AREA" layoutX="14.0" layoutY="14.0" prefHeight="35.0" prefWidth="400.0">
                             <buttons>
                                 <Button onMouseClicked="#onSearchButtonClick" prefHeight="30.0" prefWidth="40.0" styleClass="button" text="Search" />
                             </buttons>
                         </ButtonBar>
-                        <TextField fx:id="searchBox" layoutX="10.0" layoutY="14.0" prefHeight="35.0" prefWidth="320.0" />
+                        <TextField onKeyPressed="#search" fx:id="searchBox" layoutX="10.0" layoutY="14.0" prefHeight="35.0" prefWidth="320.0" />
+
                     </children>
-                    <Label fx:id="result" layoutX="2.0" layoutY="60.0" prefHeight="270.0" prefWidth="414.0" />
+                    <Label fx:id="result" layoutX="4.0" layoutY="200.0" prefHeight="128.0" prefWidth="414.0" />
                 </AnchorPane>
             </Tab>
             <Tab text="Custom">

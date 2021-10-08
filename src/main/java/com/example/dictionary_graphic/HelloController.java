@@ -5,6 +5,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 
 import javax.swing.*;
@@ -37,14 +38,14 @@ public class HelloController implements Initializable {
         if (target == "") {
             result.setText("No word inserted!");
         } else {
-            search(mouseEvent);
+//            search(mouseEvent);
             String exlpain = DictionaryManagement.dictionaryLookup(target);
             result.setText(exlpain);
         }
     }
 
     @FXML
-    public void search(MouseEvent event) {
+    public void search(KeyEvent event) {
         listView.getItems().clear();
         listView.getItems().addAll(searchList(searchBox.getText(), list));
     }
