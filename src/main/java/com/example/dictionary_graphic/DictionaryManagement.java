@@ -27,6 +27,7 @@ public class DictionaryManagement {
      * Lookup Word.
      */
     public static String dictionaryLookup(String w) {
+        w = w.toLowerCase(Locale.ROOT);
         for (Word check : Dictionary.getWords()) {
             if (check.getWord_target().equalsIgnoreCase(w)) {
                 return (check.getWord_explain());
