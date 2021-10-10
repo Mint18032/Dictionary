@@ -68,8 +68,9 @@ public class HelloController implements Initializable {
         if (click == null || click.isEmpty()) {
             result.setText("Nothing Selected!");
         } else {
+            searchBox.setText(click);
             String exlpain = DictionaryManagement.dictionaryLookup(click);
-            result.setText(exlpain);
+            //result.setText(exlpain);
         }
     }
 
