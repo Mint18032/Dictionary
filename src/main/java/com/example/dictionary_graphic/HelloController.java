@@ -1,25 +1,29 @@
 package com.example.dictionary_graphic;
 
+import com.example.dictionary_graphic.*;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 
-import javax.swing.*;
-import java.awt.event.ActionEvent;
 import java.net.URL;
-import java.sql.SQLException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.ResourceBundle;
 import java.util.stream.Collectors;
 
 public class HelloController implements Initializable {
-    ArrayList<String> list = DictionaryCommandline.listWordTarget();
+    ArrayList<String> listword = DictionaryCommandline.listWordTarget();
+
     @FXML
     private Label result;
     public TextField searchBox;
+    private TextArea textArea;
 
     String target;
 
@@ -47,13 +51,26 @@ public class HelloController implements Initializable {
     @FXML
     public void search(KeyEvent event) {
         listView.getItems().clear();
-        listView.getItems().addAll(searchList(searchBox.getText(), list));
+        listView.getItems().addAll(searchList(searchBox.getText(), listword));
     }
+
 
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        listView.getItems().addAll(list);
+        listView.getItems().addAll(listword);
+
+    }
+
+    @FXML
+    public void searchOnClick(MouseEvent event) {
+        String click = listView.getSelectionModel().getSelectedItem();
+        if (click == null || click.isEmpty()) {
+            result.setText("Nothing Selected!");
+        } else {
+            String exlpain = DictionaryManagement.dictionaryLookup(click);
+            result.setText(exlpain);
+        }
     }
 
     private List<String> searchList(String searchWords, List<String> listOfStrings) {

@@ -29,7 +29,7 @@ public class Word {
     }
 
     /**
-     * Non-args Constructor.
+     * Non-args Constructor for Word.
      */
     public Word() {
     }

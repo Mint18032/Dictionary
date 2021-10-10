@@ -2,7 +2,7 @@ package com.example.dictionary_graphic;
 import java.util.LinkedList;
 
 public class Dictionary {
-    private static LinkedList<Word> words = new LinkedList<>();
+    private static LinkedList<Word> words = new LinkedList<Word>();
 
     public static LinkedList<Word> getWords() {
         return words;

@@ -2,7 +2,10 @@
     -fx-background-color: #33cccc;
     -fx-border-color: #000000;
 }
-
+.result {
+    -fx-background-color: #fff;
+    -fx-border-color: #42b6f5;
+}
 .button:hover {
   -fx-background-color: #29a3a3;
   -fx-border-color: #000000;
