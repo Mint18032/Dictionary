@@ -9,6 +9,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
+import org.controlsfx.control.textfield.TextFields;
 
 import java.net.URL;
 import java.util.ArrayList;
@@ -35,23 +36,12 @@ public class HelloController implements Initializable {
         System.out.println("You clicked!");
     }
 
-    @FXML
-    public void onSearchButtonClick(MouseEvent mouseEvent) {
-        target = searchBox.getText().trim();
 
-        if (target == "") {
-            result.setText("No word inserted!");
-        } else {
-//            search(mouseEvent);
-            String exlpain = DictionaryManagement.dictionaryLookup(target);
-            result.setText(exlpain);
-        }
-    }
 
     @FXML
     public void search(KeyEvent event) {
         listView.getItems().clear();
-        listView.getItems().addAll(searchList(searchBox.getText(), listword));
+        listView.getItems().addAll(DictionaryManagement.dictionaryRelatedWord(searchBox.getText()));
     }
 
 
@@ -59,7 +49,18 @@ public class HelloController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         listView.getItems().addAll(listword);
+    }
 
+    @FXML
+    public void onSearchButtonClick(MouseEvent mouseEvent) {
+        target = searchBox.getText().trim();
+        if (target == "") {
+            result.setText("No word inserted!");
+        } else {
+//            search(mouseEvent);
+            String exlpain = DictionaryManagement.dictionaryLookup(target);
+            result.setText(exlpain);
+        }
     }
 
     @FXML
@@ -72,13 +73,6 @@ public class HelloController implements Initializable {
             String exlpain = DictionaryManagement.dictionaryLookup(click);
             //result.setText(exlpain);
         }
-    }
-
-    private List<String> searchList(String searchWords, List<String> listOfStrings) {
-        List<String> searchWordArray = Arrays.asList(searchWords.trim().split(" "));
-        return listOfStrings.stream().filter(input ->{
-            return searchWordArray.stream().allMatch(word -> input.toLowerCase().contains(word.toLowerCase()));
-        }).collect(Collectors.toList());
     }
 }
     

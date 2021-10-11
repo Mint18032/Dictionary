@@ -2,6 +2,7 @@ package com.example.dictionary_graphic;
 
 import java.io.*;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -38,6 +39,16 @@ public class DictionaryManagement {
         return "This word doesn't exist!";
     }
 
+    public static ArrayList<String> dictionaryRelatedWord(String w) {
+        w = w.toLowerCase(Locale.ROOT);
+        ArrayList<String> list = new ArrayList<>();
+        for (Word check : Dictionary.getWords()) {
+            if (check.getWord_target().startsWith(w)) {
+                list.add(check.getWord_target());
+            }
+        }
+        return list;
+    }
     /**
      * Remove a word from the Dictionary.
      */
