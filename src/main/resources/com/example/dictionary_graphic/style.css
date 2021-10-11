@@ -27,6 +27,10 @@
     -fx-color: gray;
 }
 
+.label {
+    -fx-alignment: center;
+}
+
 #explain {
     -fx-padding: 0px;
 }

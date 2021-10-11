@@ -11,6 +11,7 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import org.controlsfx.control.textfield.TextFields;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -73,6 +74,21 @@ public class HelloController implements Initializable {
             String exlpain = DictionaryManagement.dictionaryLookup(click);
             //result.setText(exlpain);
         }
+    }
+
+    @FXML
+    private void addNewWord(MouseEvent event) throws IOException {
+        SecondaryController.addNewWord(event);
+    }
+
+    @FXML
+    private void fixWord(MouseEvent event) throws IOException {
+        SecondaryController.fixWord(event);
+    }
+
+    @FXML
+    private void deleteWord(MouseEvent event) throws IOException {
+        SecondaryController.deleteWord(event);
     }
 }
     

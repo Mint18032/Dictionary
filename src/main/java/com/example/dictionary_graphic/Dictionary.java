@@ -1,4 +1,5 @@
 package com.example.dictionary_graphic;
+
 import java.util.LinkedList;
 
 public class Dictionary {

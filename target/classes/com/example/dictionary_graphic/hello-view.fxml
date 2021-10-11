@@ -16,25 +16,25 @@
                                 <Button onMouseClicked="#onSearchButtonClick" prefHeight="30.0" prefWidth="40.0" styleClass="button" text="Search" />
                             </buttons>
                         </ButtonBar>
-                        <TextField fx:id="searchBox" layoutX="10.0" layoutY="14.0" onKeyPressed="#search" prefHeight="35.0" prefWidth="320.0" />
+                        <TextField fx:id="searchBox" layoutX="10.0" layoutY="14.0" onKeyReleased="#search" prefHeight="35.0" prefWidth="320.0" />
                     </children>
-                    <Label fx:id="result" layoutX="10.0" layoutY="191.0" styleClass="result" prefHeight="42.0" prefWidth="400.0" />
+                    <Label fx:id="result" layoutX="10.0" layoutY="191.0" prefHeight="42.0" prefWidth="400.0" styleClass="result" />
                 </AnchorPane>
             </Tab>
             <Tab text="Custom">
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="336.0" prefWidth="422.0">
                     <children>
-                        <Button layoutX="101.0" layoutY="82.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="216.0" styleClass="button" text="Add new word" textAlignment="CENTER" textOverrun="CENTER_WORD_ELLIPSIS">
+                        <Button layoutX="101.0" layoutY="82.0" mnemonicParsing="false" onMouseClicked="#addNewWord" prefHeight="56.0" prefWidth="216.0" styleClass="button" text="Add new word" textAlignment="CENTER" textOverrun="CENTER_WORD_ELLIPSIS">
                             <font>
                                 <Font name="Berlin Sans FB" size="18.0" />
                             </font>
                         </Button>
-                        <Button layoutX="101.0" layoutY="154.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="216.0" styleClass="button" text="Fix word" textAlignment="CENTER" textOverrun="CENTER_WORD_ELLIPSIS">
+                        <Button layoutX="101.0" layoutY="154.0" mnemonicParsing="false" onMouseClicked="#fixWord" prefHeight="56.0" prefWidth="216.0" styleClass="button" text="Fix word" textAlignment="CENTER" textOverrun="CENTER_WORD_ELLIPSIS">
                             <font>
                                 <Font name="Berlin Sans FB" size="18.0" />
                             </font>
                         </Button>
-                        <Button layoutX="101.0" layoutY="221.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="216.0" styleClass="button" text="Delete word" textAlignment="CENTER" textOverrun="CENTER_WORD_ELLIPSIS">
+                        <Button layoutX="101.0" layoutY="221.0" mnemonicParsing="false" onMouseClicked="#deleteWord" prefHeight="56.0" prefWidth="216.0" styleClass="button" text="Delete word" textAlignment="CENTER" textOverrun="CENTER_WORD_ELLIPSIS">
                             <font>
                                 <Font name="Berlin Sans FB" size="18.0" />
                             </font>

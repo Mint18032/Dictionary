@@ -1,17 +1,8 @@
 package com.example.dictionary_graphic;
 
-import java.io.*;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.LinkedList;
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.Locale;
-import java.util.Scanner;
 
 public class DictionaryManagement {
     /**
@@ -28,10 +19,10 @@ public class DictionaryManagement {
      * Lookup Word.
      */
     public static String dictionaryLookup(String w) {
-        w = w.toLowerCase(Locale.ROOT);
+        w = w.toLowerCase();
         for (Word check : Dictionary.getWords()) {
             if (check.getWord_target().equalsIgnoreCase(w)) {
-                return (check.getWord_explain());
+                return (check.getWord_target() + "\n" + check.getWord_explain());
             } else if (w.charAt(0) < check.getWord_target().charAt(0)) {
                 break;
             }
@@ -40,7 +31,7 @@ public class DictionaryManagement {
     }
 
     public static ArrayList<String> dictionaryRelatedWord(String w) {
-        w = w.toLowerCase(Locale.ROOT);
+        w = w.toLowerCase();
         ArrayList<String> list = new ArrayList<>();
         for (Word check : Dictionary.getWords()) {
             if (check.getWord_target().startsWith(w)) {
