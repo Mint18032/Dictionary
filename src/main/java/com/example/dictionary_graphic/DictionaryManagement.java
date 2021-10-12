@@ -45,6 +45,7 @@ public class DictionaryManagement {
      */
     public static String deleteWord(String w) {
         // Delete from list.
+        w = w.toLowerCase();
         LinkedList<Word> list = Dictionary.getWords();
         for (Word check : list) {
             if (check.getWord_target().equals(w)) {

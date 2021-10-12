@@ -3,10 +3,7 @@ package com.example.dictionary_graphic;
 import com.example.dictionary_graphic.*;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import org.controlsfx.control.textfield.TextFields;
@@ -26,9 +23,10 @@ public class HelloController implements Initializable {
     private Label result;
     public TextField searchBox;
     private TextArea textArea;
-
-    String target;
-
+    @FXML
+    private Tab translate;
+    @FXML
+    private String target;
     @FXML
     private ListView<String> listView;
 
@@ -36,8 +34,6 @@ public class HelloController implements Initializable {
     private void onAddButtonClick() {
         System.out.println("You clicked!");
     }
-
-
 
     @FXML
     public void search(KeyEvent event) {
@@ -67,6 +63,7 @@ public class HelloController implements Initializable {
             String exlpain = DictionaryManagement.dictionaryLookup(target);
             result.setText(exlpain);
         }
+        searchBox.setText("");
     }
 
     @FXML

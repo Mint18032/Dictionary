@@ -17,6 +17,7 @@
     -fx-background-color: #33cccc;
     -fx-outline: none;
     -fx-border: none;
+    -fx-font-weight: bold;
 }
 
 .tab:hover {
@@ -33,4 +34,20 @@
 
 #explain {
     -fx-padding: 0px;
+}
+
+#translate {
+    -fx-background-image: url("/com/example/dictionary_graphic/translate.png");
+}
+
+#custom {
+    -fx-background-image: url("/com/example/dictionary_graphic/custom.png");
+}
+
+#google {
+    -fx-background-image: url("/com/example/dictionary_graphic/google.png");
+}
+
+#speak {
+    -fx-background-image: url("/com/example/dictionary_graphic/speak.png");
 }
