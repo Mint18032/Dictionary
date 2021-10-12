@@ -19,6 +19,7 @@
                         <TextField fx:id="searchBox" layoutX="10.0" layoutY="14.0" onKeyReleased="#search" prefHeight="35.0" prefWidth="320.0" />
                     </children>
                     <Label fx:id="result" layoutX="10.0" layoutY="191.0" prefHeight="135.0" prefWidth="400.0" styleClass="result" />
+                    <Button onMouseClicked="#textToSpeech" layoutX="330.0" layoutY="191.0" prefHeight="30.0" prefWidth="80" styleClass="button" text="Speech" />
                 </AnchorPane>
             </Tab>
             <Tab text="Custom">

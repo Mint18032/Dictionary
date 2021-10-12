@@ -45,7 +45,12 @@ public class HelloController implements Initializable {
         listView.getItems().addAll(DictionaryManagement.dictionaryRelatedWord(searchBox.getText()));
     }
 
-
+    @FXML
+    public void textToSpeech() {
+        TTS textToSpeech = new TTS("kevin16");
+        String word = searchBox.getText();
+        textToSpeech.say(word);
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -72,7 +77,7 @@ public class HelloController implements Initializable {
         } else {
             searchBox.setText(click);
             String exlpain = DictionaryManagement.dictionaryLookup(click);
-            //result.setText(exlpain);
+            result.setText(exlpain);
         }
     }
 
