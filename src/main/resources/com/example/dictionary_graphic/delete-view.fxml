@@ -7,6 +7,6 @@
     <children>
         <Label fx:id="announce" layoutX="2.0" layoutY="10.0" prefHeight="35.0" prefWidth="335.0" text="You can delete a word here:" />
         <TextField fx:id="word" layoutX="19.0" layoutY="87.0" prefHeight="35.0" prefWidth="302.0" />
-        <Button layoutX="144.0" layoutY="154.0" mnemonicParsing="false" onMouseClicked="#onDeleteClick" text="Delete" />
+        <Button layoutX="144.0" layoutY="154.0" mnemonicParsing="false" onMouseClicked="#onDeleteClick" />
     </children>
 </AnchorPane>

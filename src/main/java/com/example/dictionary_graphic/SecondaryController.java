@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Tooltip;
 import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Modality;
@@ -85,6 +86,8 @@ public class SecondaryController {
             return;
         }
         announce.setText(DictionaryManagement.fixWord(w, e));
+        word.setText("");
+        explain.setText("");
     }
 
     @FXML
@@ -96,4 +99,5 @@ public class SecondaryController {
         }
         announce.setText(DictionaryManagement.deleteWord(w));
     }
+
 }

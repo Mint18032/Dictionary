@@ -1,6 +1,3 @@
-/**
- * Doc.
- */
 module com.example.dictionary_graphic {
     requires javafx.controls;
     requires javafx.fxml;
