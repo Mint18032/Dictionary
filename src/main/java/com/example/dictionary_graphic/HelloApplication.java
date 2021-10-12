@@ -18,6 +18,7 @@ public class HelloApplication extends Application {
         stage.getIcons().add(logo);
         stage.setTitle("Khanh & Minh Dictionary");
         stage.setScene(scene);
+        stage.setResizable(false);
         stage.show();
     }
 

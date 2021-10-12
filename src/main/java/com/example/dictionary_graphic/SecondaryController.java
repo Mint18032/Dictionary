@@ -31,6 +31,7 @@ public class SecondaryController {
         AddStage.setTitle("Add new word");
         AddStage.setScene(scene);
         AddStage.initModality(Modality.APPLICATION_MODAL);
+        AddStage.setResizable(false);
         AddStage.show();
     }
 
@@ -44,6 +45,7 @@ public class SecondaryController {
         AddStage.setTitle("Fix word");
         AddStage.setScene(scene);
         AddStage.initModality(Modality.APPLICATION_MODAL);
+        AddStage.setResizable(false);
         AddStage.show();
     }
 
@@ -57,6 +59,7 @@ public class SecondaryController {
         AddStage.setTitle("Delete word");
         AddStage.setScene(scene);
         AddStage.initModality(Modality.APPLICATION_MODAL);
+        AddStage.setResizable(false);
         AddStage.show();
     }
 
