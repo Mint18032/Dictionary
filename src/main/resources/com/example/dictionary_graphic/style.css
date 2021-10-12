@@ -47,3 +47,7 @@
 #google {
     -fx-background-image: url("/com/example/dictionary_graphic/google.png");
 }
+
+#speak {
+    -fx-background-image: url("/com/example/dictionary_graphic/speak.png");
+}

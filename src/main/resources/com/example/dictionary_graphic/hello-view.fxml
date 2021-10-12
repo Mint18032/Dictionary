@@ -10,21 +10,18 @@
         <TabPane prefHeight="399.0" prefWidth="422.0" tabClosingPolicy="UNAVAILABLE">
             <Tab fx:id="translate" text="             Translate">
                 <AnchorPane minHeight="10.0" minWidth="0.0" prefHeight="326.0" prefWidth="422.0">
-                    <children>
-                        <ListView fx:id="listView" layoutX="10.0" layoutY="69.0" onMouseClicked="#searchOnClick" prefHeight="110.0" prefWidth="400.0" />
+                        <ListView fx:id="listView" layoutX="10.0" layoutY="56.0" onMouseClicked="#searchOnClick" prefHeight="110.0" prefWidth="400.0" />
                         <ButtonBar accessibleRole="TEXT_AREA" layoutX="14.0" layoutY="14.0" prefHeight="35.0" prefWidth="400.0">
                             <buttons>
-
                                 <Button onMouseClicked="#onSearchButtonClick" prefHeight="30.0" prefWidth="40.0" styleClass="button" text="Search" />
                             </buttons>
                         </ButtonBar>
                         <TextField fx:id="searchBox" layoutX="10.0" layoutY="14.0" onKeyReleased="#search" prefHeight="35.0" prefWidth="320.0" />
-                    </children>
-                    <Label fx:id="result" layoutX="10.0" layoutY="191.0" prefHeight="135.0" prefWidth="400.0" styleClass="result" />
-                    <Button layoutX="330.0" layoutY="191.0" onMouseClicked="#textToSpeech" prefHeight="30.0" prefWidth="80" styleClass="button" text="Speech" />
+                    <Label fx:id="result" layoutX="10.0" layoutY="177.0" prefHeight="149.0" prefWidth="400.0" styleClass="result" />
+                    <Button fx:id="speak" layoutX="382.0" layoutY="177.0" onMouseClicked="#textToSpeech" prefHeight="9.0" prefWidth="26.0" styleClass="button" text=" " />
                 </AnchorPane>
             </Tab>
-            <Tab fx:id="custom" text="              Custom">
+            <Tab fx:id="custom" text="             Custom">
                 <AnchorPane prefHeight="371.0" prefWidth="422.0">
                     <children>
                         <Button layoutX="103.0" layoutY="67.0" mnemonicParsing="false" onMouseClicked="#addNewWord" prefHeight="56.0" prefWidth="216.0" styleClass="button" text="Add new word" textAlignment="CENTER" textOverrun="CENTER_WORD_ELLIPSIS">
@@ -50,18 +47,14 @@
                     </children>
                 </AnchorPane>
             </Tab>
-            <Tab fx:id="google" text="         Google translate">
-<!--                <AnchorPane minHeight="10.0" minWidth="0.0" prefHeight="326.0" prefWidth="422.0">-->
-<!--                    <children>-->
-<!--                        <ButtonBar accessibleRole="TEXT_AREA" layoutX="14.0" layoutY="14.0" prefHeight="35.0" prefWidth="400.0">-->
-<!--                            <buttons>-->
-<!--                                <Button onMouseClicked="#onSearchButtonClick" prefHeight="30.0" prefWidth="40.0" styleClass="button" text="Search" />-->
-<!--                            </buttons>-->
-<!--                        </ButtonBar>-->
-<!--                        <TextField fx:id="searchBox" layoutX="10.0" layoutY="14.0" onKeyReleased="#search" prefHeight="35.0" prefWidth="320.0" />-->
-<!--                    </children>-->
-<!--                    <Label fx:id="result" layoutX="10.0" layoutY="191.0" prefHeight="137.0" prefWidth="400.0" styleClass="result" />-->
-<!--                </AnchorPane>-->
+            <Tab fx:id="google" text="          Google translate">
+                <AnchorPane minHeight="10.0" minWidth="0.0" prefHeight="326.0" prefWidth="422.0">
+                    <children>
+                        <TextField fx:id="searchBox" layoutX="10.0" layoutY="14.0" prefHeight="136.0" prefWidth="400.0" />
+                        <Button layoutX="174.0" layoutY="155.0" prefHeight="31.0" prefWidth="74.0" styleClass="button" text="Search" />
+                        <Label fx:id="result" layoutX="10.0" layoutY="191.0" prefHeight="137.0" prefWidth="400.0" styleClass="result" />
+                    </children>
+                </AnchorPane>
             </Tab>
         </TabPane>
    </children>

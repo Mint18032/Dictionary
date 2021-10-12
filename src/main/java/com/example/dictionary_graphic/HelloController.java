@@ -25,9 +25,8 @@ public class HelloController implements Initializable {
     private TextArea textArea;
     @FXML
     private Tab translate;
-
-    String target;
-
+    @FXML
+    private String target;
     @FXML
     private ListView<String> listView;
 
@@ -35,8 +34,6 @@ public class HelloController implements Initializable {
     private void onAddButtonClick() {
         System.out.println("You clicked!");
     }
-
-
 
     @FXML
     public void search(KeyEvent event) {
