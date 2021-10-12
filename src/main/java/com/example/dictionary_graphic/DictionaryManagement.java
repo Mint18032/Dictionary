@@ -22,7 +22,7 @@ public class DictionaryManagement {
         w = w.toLowerCase();
         for (Word check : Dictionary.getWords()) {
             if (check.getWord_target().equalsIgnoreCase(w)) {
-                return (check.getWord_target() + "\n" + check.getWord_explain());
+                return (check.getWord_explain());
             } else if (w.charAt(0) < check.getWord_target().charAt(0)) {
                 break;
             }
