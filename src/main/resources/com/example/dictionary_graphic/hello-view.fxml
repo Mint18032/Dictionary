@@ -51,9 +51,20 @@
             <Tab fx:id="google" text="          Google translate">
                 <AnchorPane minHeight="10.0" minWidth="0.0" prefHeight="326.0" prefWidth="422.0">
                     <children>
-                        <TextField fx:id="gSearchBox" layoutX="10.0" layoutY="14.0" prefHeight="136.0" prefWidth="400.0" />
-                        <Button layoutX="174.0" layoutY="155.0" prefHeight="31.0" prefWidth="74.0" styleClass="button" text="Search" />
-                        <Label fx:id="gResult" layoutX="10.0" layoutY="191.0" prefHeight="137.0" prefWidth="400.0" styleClass="result" />
+                        <Text fx:id="text1" layoutX="10.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tiếng Anh">
+                            <font>
+                                <Font name="System Bold" size="12.0" />
+                            </font>
+                        </Text>
+                        <Text fx:id="text2" layoutX="10.0" layoutY="191.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tiếng Việt">
+                            <font>
+                                <Font name="System Bold" size="12.0" />
+                            </font>
+                        </Text>
+                        <TextArea fx:id="textArea1" layoutX="10.0" layoutY="19.0" prefHeight="130.0" prefWidth="400.0" styleClass="result"/>
+                        <Button layoutX="100.0" layoutY="155.0" prefHeight="31.0" prefWidth="120.0" styleClass="button" onAction="#changeLanguage" text="Change Language" />
+                        <Button layoutX="250.0" layoutY="155.0" prefHeight="31.0" prefWidth="74.0" styleClass="button" onAction="#searchOnline" text="Search" />
+                        <TextArea fx:id="textArea2" layoutX="10.0" layoutY="195.0" prefHeight="130.0" prefWidth="400.0" styleClass="result" />
                     </children>
                 </AnchorPane>
             </Tab>

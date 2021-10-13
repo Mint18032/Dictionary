@@ -6,6 +6,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.text.Text;
 import org.controlsfx.control.textfield.TextFields;
 
 import java.io.IOException;
@@ -22,7 +23,14 @@ public class HelloController implements Initializable {
     @FXML
     private Label result;
     public TextField searchBox;
-    private TextArea textArea;
+    @FXML
+    private TextArea textArea1;
+    @FXML
+    private  TextArea textArea2;
+    @FXML
+    private Text text1;
+    @FXML
+    private Text text2;
     @FXML
     private Tab translate;
     @FXML
@@ -77,6 +85,28 @@ public class HelloController implements Initializable {
             result.setText(exlpain);
         }
     }
+
+    @FXML
+    public void searchOnline() {
+        try {
+            if (text1.getText().equals("Tiếng Anh")) {
+                API api = new API();
+                textArea2.setText(api.translate("en", "vi", textArea1.getText()));
+            } else {
+                API api = new API();
+                textArea2.setText(api.translate("vi", "en", textArea1.getText()));
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void changeLanguage() {
+        String s = text1.getText();
+        text1.setText(text2.getText());
+        text2.setText(s);
+    }
+
 
     @FXML
     private void addNewWord(MouseEvent event) throws IOException {
