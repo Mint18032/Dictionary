@@ -30,12 +30,17 @@ public class DictionaryManagement {
         return "This word doesn't exist!";
     }
 
+    /**
+     * Find related words.
+     */
     public static ArrayList<String> dictionaryRelatedWord(String w) {
         w = w.toLowerCase();
         ArrayList<String> list = new ArrayList<>();
         for (Word check : Dictionary.getWords()) {
             if (check.getWord_target().startsWith(w)) {
                 list.add(check.getWord_target());
+            } else if (w.charAt(0) < check.getWord_target().charAt(0)) {
+                break;
             }
         }
         return list;
@@ -45,19 +50,16 @@ public class DictionaryManagement {
      */
     public static String deleteWord(String w) {
         // Delete from list.
-        w = w.toLowerCase();
         LinkedList<Word> list = Dictionary.getWords();
         for (Word check : list) {
-            if (check.getWord_target().equals(w)) {
+            if (check.getWord_target().equalsIgnoreCase(w)) {
                 list.remove(check);
                 break;
             } else if (w.charAt(0) < check.getWord_target().charAt(0)) {
                 return "This word doesn't exist or is already deleted!";
             }
         }
-
         Dictionary.setWords(list);
-        System.out.println();
 
         // Delete from database.
         try {
@@ -74,9 +76,8 @@ public class DictionaryManagement {
     public static String fixWord(String target, String explain) {
         // Fix list.
         LinkedList<Word> list = Dictionary.getWords();
-        target = target.toLowerCase();
         for (Word check : list) {
-            if (check.getWord_target().equals(target)) {
+            if (check.getWord_target().equalsIgnoreCase(target)) {
                 check.setWord_explain(explain);
                 break;
             } else if (target.charAt(0) < check.getWord_target().charAt(0)) {

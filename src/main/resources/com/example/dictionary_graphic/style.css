@@ -14,10 +14,8 @@
 }
 
 .tab {
-    -fx-padding: 14px 16px;
+    -fx-padding: 13px 16px;
     -fx-background-color: #33cccc;
-    -fx-outline: 0;
-    -fx-border: 0;
     -fx-font-weight: bold;
     -fx-focus-color: transparent;
     -fx-faint-focus-color: transparent;
@@ -30,9 +28,11 @@
 }
 
 .tab:selected {
-    -fx-background-color: #ffcc00;
-    -fx-display: none;
-    -fx-border: 0;
+    -fx-background-color: #ffff00;
+}
+
+.wall {
+    -fx-background-color: #ffff99;
 }
 
 .label {
@@ -41,6 +41,11 @@
 
 #explain {
     -fx-padding: 0px;
+}
+
+#speak {
+    -fx-background-color: transparent;
+    -fx-border-width: 0;
 }
 
 #translate {

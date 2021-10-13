@@ -7,6 +7,8 @@ import javafx.scene.control.*;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
+import javafx.scene.web.WebEngine;
+import javafx.scene.web.WebView;
 import org.controlsfx.control.textfield.TextFields;
 
 import java.io.IOException;
@@ -21,12 +23,13 @@ public class HelloController implements Initializable {
     ArrayList<String> listword = DictionaryCommandline.listWordTarget();
 
     @FXML
-    private Label result;
-    public TextField searchBox;
+    private TextField searchBox;
+    @FXML
+    private WebView webView;
     @FXML
     private TextArea textArea1;
     @FXML
-    private  TextArea textArea2;
+    private TextArea textArea2;
     @FXML
     private Text text1;
     @FXML
@@ -37,6 +40,7 @@ public class HelloController implements Initializable {
     private String target;
     @FXML
     private ListView<String> listView;
+    private boolean updated;
 
     @FXML
     private void onAddButtonClick() {
@@ -59,17 +63,17 @@ public class HelloController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         listView.getItems().addAll(listword);
+        updated = true;
     }
 
     @FXML
     public void onSearchButtonClick(MouseEvent mouseEvent) {
         target = searchBox.getText().trim();
         if (target == "") {
-            result.setText("No word inserted!");
+            webView.getEngine().loadContent("No word inserted!");
         } else {
-//            search(mouseEvent);
-            String exlpain = DictionaryManagement.dictionaryLookup(target);
-            result.setText(exlpain);
+            String explain = DictionaryManagement.dictionaryLookup(target);
+            webView.getEngine().loadContent(explain);
         }
         searchBox.setText("");
     }
@@ -78,11 +82,11 @@ public class HelloController implements Initializable {
     public void searchOnClick(MouseEvent event) {
         String click = listView.getSelectionModel().getSelectedItem();
         if (click == null || click.isEmpty()) {
-            result.setText("Nothing Selected!");
+            webView.getEngine().loadContent("Nothing Selected!");
         } else {
             searchBox.setText(click);
-            String exlpain = DictionaryManagement.dictionaryLookup(click);
-            result.setText(exlpain);
+            String explain = DictionaryManagement.dictionaryLookup(click);
+            webView.getEngine().loadContent(explain);
         }
     }
 
@@ -107,20 +111,32 @@ public class HelloController implements Initializable {
         text2.setText(s);
     }
 
+    @FXML
+    private void update() {
+        if (updated) return;
+        listword = DictionaryCommandline.listWordTarget();
+        listView.getItems().clear();
+        listView.getItems().addAll(listword);
+        searchBox.setText("");
+        updated = true;
+    }
 
     @FXML
     private void addNewWord(MouseEvent event) throws IOException {
         SecondaryController.addNewWord(event);
+        updated = false;
     }
 
     @FXML
     private void fixWord(MouseEvent event) throws IOException {
         SecondaryController.fixWord(event);
+        updated = false;
     }
 
     @FXML
     private void deleteWord(MouseEvent event) throws IOException {
         SecondaryController.deleteWord(event);
+        updated = false;
     }
 }
     
