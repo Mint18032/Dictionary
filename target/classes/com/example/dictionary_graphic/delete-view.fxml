@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="210.0" prefWidth="339.0" stylesheets="@/com/example/dictionary_graphic/style.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dictionary_graphic.SecondaryController">
+    <children>
+        <Label fx:id="announce" layoutX="2.0" layoutY="10.0" prefHeight="35.0" prefWidth="335.0" text="You can delete a word here:" />
+        <TextField fx:id="word" layoutX="19.0" layoutY="87.0" prefHeight="35.0" prefWidth="302.0" />
+        <Button layoutX="144.0" layoutY="154.0" mnemonicParsing="false" onMouseClicked="#onDeleteClick" />
+    </children>
+</AnchorPane>
