@@ -2,30 +2,37 @@
     -fx-background-color: #33cccc;
     -fx-border-color: #000000;
 }
+
 .result {
     -fx-background-color: #fff;
     -fx-border-color: #42b6f5;
 }
+
 .button:hover {
   -fx-background-color: #29a3a3;
-  -fx-border-color: #000000;
+  -fx-color: #000000;
 }
 
 .tab {
     -fx-padding: 14px 16px;
-    -fx-color: #33cccc;
     -fx-background-color: #33cccc;
-    -fx-outline: none;
-    -fx-border: none;
+    -fx-outline: 0;
+    -fx-border: 0;
     -fx-font-weight: bold;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
 }
 
 .tab:hover {
     -fx-background-color: #29a3a3;
-    -fx-padding: 14px 16px;
     -fx-width: 10%;
-    -fx-border: none;
     -fx-color: gray;
+}
+
+.tab:selected {
+    -fx-background-color: #ffcc00;
+    -fx-display: none;
+    -fx-border: 0;
 }
 
 .label {
