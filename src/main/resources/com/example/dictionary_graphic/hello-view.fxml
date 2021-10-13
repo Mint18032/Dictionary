@@ -17,8 +17,8 @@
                                 <Button onMouseClicked="#onSearchButtonClick" prefHeight="30.0" prefWidth="40.0" styleClass="button" text="Search" />
                             </buttons>
                         </ButtonBar>
-                        <TextField fx:id="searchBox" layoutX="10.0" layoutY="14.0" onKeyReleased="#search" prefHeight="35.0" prefWidth="320.0" />
-                    <Label fx:id="result" layoutX="10.0" layoutY="177.0" prefHeight="149.0" prefWidth="400.0" styleClass="result" />
+                        <TextField fx:id="searchBox" layoutX="10.0" layoutY="14.0" onKeyReleased="#search" prefHeight="35.0" prefWidth="320.0" promptText="Type here to search." />
+                    <Label fx:id="result" layoutX="10.0" layoutY="177.0" prefHeight="149.0" prefWidth="400.0" styleClass="result" textAlignment="JUSTIFY" textOverrun="CLIP" wrapText="true" />
                     <Button fx:id="speak" layoutX="382.0" layoutY="177.0" onMouseClicked="#textToSpeech" prefHeight="9.0" prefWidth="26.0" styleClass="button" text=" " />
                 </AnchorPane>
             </Tab>
