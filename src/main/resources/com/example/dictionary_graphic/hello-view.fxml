@@ -65,7 +65,7 @@
                         <TextArea fx:id="textArea1" layoutX="10.0" layoutY="19.0" prefHeight="130.0" prefWidth="400.0" styleClass="result" />
                         <Button layoutX="100.0" layoutY="155.0" onAction="#changeLanguage" prefHeight="31.0" prefWidth="120.0" styleClass="button" text="Change Language" />
                         <Button layoutX="250.0" layoutY="155.0" onAction="#searchOnline" prefHeight="31.0" prefWidth="74.0" styleClass="button" text="Search" />
-                        <TextArea fx:id="textArea2" layoutX="10.0" layoutY="195.0" prefHeight="130.0" prefWidth="400.0" styleClass="result" />
+                        <WebView fx:id="webView2" layoutX="10.0" layoutY="195.0" prefHeight="130.0" prefWidth="400.0" />
                     </children>
                 </AnchorPane>
             </Tab>

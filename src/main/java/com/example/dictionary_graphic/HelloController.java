@@ -27,6 +27,8 @@ public class HelloController implements Initializable {
     @FXML
     private WebView webView;
     @FXML
+    private WebView webView2;
+    @FXML
     private TextArea textArea1;
     @FXML
     private TextArea textArea2;
@@ -95,10 +97,10 @@ public class HelloController implements Initializable {
         try {
             if (text1.getText().equals("Tiếng Anh")) {
                 API api = new API();
-                textArea2.setText(api.translate("en", "vi", textArea1.getText()));
+                webView2.getEngine().loadContent((api.translate("en", "vi", textArea1.getText())));
             } else {
                 API api = new API();
-                textArea2.setText(api.translate("vi", "en", textArea1.getText()));
+                webView2.getEngine().loadContent((api.translate("vi", "en", textArea1.getText())));
             }
         } catch (IOException e) {
             e.printStackTrace();
