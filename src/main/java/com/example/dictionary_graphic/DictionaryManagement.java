@@ -15,12 +15,13 @@ public class DictionaryManagement {
         }
 
         // Add word to list.
+        explain = "<C><F><I><N><Q><big><b id='txt'>"+target+"</b></big><br />-"+explain+"</Q></N></I></F></C>";
         Word word = new Word(target, explain);
         Dictionary.addWord(word);
 
         // Add word to database.
         try {
-            DictionaryManager.insertWord(target,explain);
+            DictionaryManager.insertWord(target, explain);
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -89,6 +90,7 @@ public class DictionaryManagement {
     public static String fixWord(String target, String explain) {
         // Fix list.
         LinkedList<Word> list = Dictionary.getWords();
+        explain = "<C><F><I><N><Q><big><b id='txt'>"+target+"</b></big><br />-"+explain+"</Q></N></I></F></C>";
         for (Word check : list) {
             if (check.getWord_target().equalsIgnoreCase(target)) {
                 check.setWord_explain(explain);

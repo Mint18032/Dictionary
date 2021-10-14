@@ -76,7 +76,7 @@ public class HelloController implements Initializable {
         webView.setOpacity(0);
         webView.getEngine().setUserStyleSheetLocation(getClass().getResource("/com/example/dictionary_graphic/style.css").toString());
         updated = true;
-        tooltip1 = new Tooltip("Dịch tiếng Anh.");
+        tooltip1 = new Tooltip("Translate Vietnamese.");
         language.setTooltip(tooltip1);
     }
 

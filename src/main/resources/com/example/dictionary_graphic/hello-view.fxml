@@ -63,7 +63,7 @@
                             </font>
                         </Text>
                         <TextArea fx:id="textArea1" layoutX="10.0" layoutY="19.0" prefHeight="130.0" prefWidth="400.0" promptText="Type here." styleClass="result" />
-                        <Button fx:id="language" layoutX="248.0" layoutY="155.0" onAction="#changeLanguage" prefHeight="31.0" prefWidth="75.0" styleClass="button" text="EN-VI" textAlignment="CENTER" />
+                        <Button fx:id="language" layoutX="248.0" layoutY="155.0" onAction="#changeLanguage" prefHeight="31.0" prefWidth="75.0" styleClass="button" text="VI-EN" textAlignment="CENTER" />
                         <Button layoutX="334.0" layoutY="155.0" onAction="#searchOnline" prefHeight="31.0" prefWidth="75.0" styleClass="button" text="Translate" />
                         <WebView fx:id="webView2" layoutX="10.0" layoutY="195.0" prefHeight="130.0" prefWidth="400.0" />
                     </children>

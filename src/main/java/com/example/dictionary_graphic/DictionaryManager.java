@@ -38,12 +38,11 @@ public class DictionaryManager {
      * Insert word to the database.
      */
     public static void insertWord(final String word, final String detail) throws SQLException {
-        String details = "<C><F><I><N><Q><big><b id='txt'>"+ word +"</b></big><br />-"+ detail + "</Q></N></I></F></C>";
         final String sqlInsertData = "insert into dictionary (word, detail) value (?, ?)";
 
         preparedness = connection.prepareStatement(sqlInsertData);
         preparedness.setString(1,word);
-        preparedness.setString(2,details);
+        preparedness.setString(2,detail);
         preparedness.executeUpdate();
 
         System.out.println("Inserted successfully");
@@ -64,12 +63,11 @@ public class DictionaryManager {
     /**
      * Fix Word.
      */
-    public static void fixWord(String word, String detail ) throws SQLException {
-        String details = "<C><F><I><N><Q><big><b id='txt'>"+ word +"</b></big><br />-"+ detail + "</Q></N></I></F></C>";
+    public static void fixWord(String word, String detail) throws SQLException {
         String sqlFixData = "update dictionary set detail = ? where word = ? ";
         preparedness = connection.prepareStatement(sqlFixData);
 
-        preparedness.setString(1, details);
+        preparedness.setString(1, detail);
         preparedness.setString(2, word);
 
         preparedness.executeUpdate();
