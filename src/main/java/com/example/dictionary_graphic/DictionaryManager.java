@@ -66,7 +66,6 @@ public class DictionaryManager {
      */
     public static void fixWord(String word, String detail ) throws SQLException {
         String details = "<C><F><I><N><Q><big><b id='txt'>"+ word +"</b></big><br />-"+ detail + "</Q></N></I></F></C>";
-
         String sqlFixData = "update dictionary set detail = ? where word = ? ";
         preparedness = connection.prepareStatement(sqlFixData);
 
@@ -80,7 +79,7 @@ public class DictionaryManager {
      * Get words from database to word list.
      */
     public static void getAllWord() throws SQLException {
-        String sqlGetAllWord = "SELECT * FROM amitdb.dictionary";
+        String sqlGetAllWord = "SELECT * FROM amitdb.dictionary ORDER BY word";
         Statement st = connection.createStatement();
         ResultSet resultSet = st.executeQuery(sqlGetAllWord);
         while (resultSet.next()) {
