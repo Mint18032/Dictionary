@@ -20,7 +20,7 @@ import java.util.ResourceBundle;
 import java.util.stream.Collectors;
 
 public class HelloController implements Initializable {
-    ArrayList<String> listword = DictionaryCommandline.listWordTarget();
+    ArrayList<String> listword = Dictionary.listWordTarget();
 
     @FXML
     private TextField searchBox;
@@ -77,17 +77,16 @@ public class HelloController implements Initializable {
             String explain = DictionaryManagement.dictionaryLookup(target);
             webView.getEngine().loadContent(explain);
         }
-        searchBox.setText("");
     }
 
     @FXML
     public void searchOnClick(MouseEvent event) {
-        String click = listView.getSelectionModel().getSelectedItem();
-        if (click == null || click.isEmpty()) {
+        target = listView.getSelectionModel().getSelectedItem();
+        if (target == null || target.isEmpty()) {
             webView.getEngine().loadContent("Nothing Selected!");
         } else {
-            searchBox.setText(click);
-            String explain = DictionaryManagement.dictionaryLookup(click);
+            searchBox.setText(target);
+            String explain = DictionaryManagement.dictionaryLookup(target);
             webView.getEngine().loadContent(explain);
         }
     }
@@ -116,10 +115,11 @@ public class HelloController implements Initializable {
     @FXML
     private void update() {
         if (updated) return;
-        listword = DictionaryCommandline.listWordTarget();
+        listword = Dictionary.listWordTarget();
         listView.getItems().clear();
         listView.getItems().addAll(listword);
         searchBox.setText("");
+        webView.getEngine().loadContent("");
         updated = true;
     }
 

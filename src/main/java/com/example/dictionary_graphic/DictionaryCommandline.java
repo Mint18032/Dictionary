@@ -12,13 +12,4 @@ public class DictionaryCommandline {
             System.out.println(w.getWord_target() + ": " + w.getWord_explain());
         }
     }
-
-    public static ArrayList<String> listWordTarget() {
-        ArrayList<String> result = new ArrayList<>();
-        LinkedList<Word> list = Dictionary.getWords();
-        for (Word check : list) {
-            result.add(check.getWord_target());
-        }
-        return result;
-    }
 }

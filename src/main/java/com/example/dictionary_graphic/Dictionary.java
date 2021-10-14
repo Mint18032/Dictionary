@@ -1,10 +1,10 @@
 package com.example.dictionary_graphic;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 
 public class Dictionary {
     private static LinkedList<Word> words = new LinkedList<Word>();
-
     public static LinkedList<Word> getWords() {
         return words;
     }
@@ -41,6 +41,18 @@ public class Dictionary {
             }
         }
     }
+
+    /**
+     * An arraylist of the word that will be displayed in the listview.
+     */
+    public static ArrayList<String> listWordTarget() {
+        ArrayList<String> result = new ArrayList<>();
+        for (Word check : words) {
+            result.add(check.getWord_target());
+        }
+        return result;
+    }
+
     public static void addWordFromDb(Word newWord) {
         words.add(newWord);
     }

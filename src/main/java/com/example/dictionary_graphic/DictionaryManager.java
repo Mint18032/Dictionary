@@ -22,11 +22,8 @@ public class DictionaryManager {
     public static String searchWord(String word) throws SQLException {
         final String sqlSearchDetail = "select detail from dictionary where word=?";
         preparedness = connection.prepareStatement(sqlSearchDetail);
-
         preparedness.setString( 1, word);
-
         ResultSet rs = preparedness.executeQuery();
-
         System.out.println("Searched already!");
 
         if (!rs.next()) {
@@ -35,7 +32,6 @@ public class DictionaryManager {
             System.out.println(rs.getString("detail"));
             return rs.getString("detail");
         }
-
     }
 
     /**
@@ -44,14 +40,13 @@ public class DictionaryManager {
     public static void insertWord(final String word, final String detail) throws SQLException {
         String details = "<C><F><I><N><Q><big><b id='txt'>"+ word +"</b></big><br />-"+ detail + "</Q></N></I></F></C>";
         final String sqlInsertData = "insert into dictionary (word, detail) value (?, ?)";
-        preparedness = connection.prepareStatement(sqlInsertData);
 
+        preparedness = connection.prepareStatement(sqlInsertData);
         preparedness.setString(1,word);
         preparedness.setString(2,details);
-
         preparedness.executeUpdate();
+
         System.out.println("Inserted successfully");
-        DictionaryManager.getAllWord();
     }
 
     /**
@@ -64,7 +59,6 @@ public class DictionaryManager {
         preparedness.setString(1,word);
         preparedness.executeUpdate();
         System.out.println("Deleted successfully");
-        DictionaryManager.getAllWord();
     }
 
     /**
@@ -80,7 +74,6 @@ public class DictionaryManager {
         preparedness.setString(2, word);
 
         preparedness.executeUpdate();
-        DictionaryManager.getAllWord();
     }
 
     /**
