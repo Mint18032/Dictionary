@@ -12,6 +12,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 public class SecondaryController {
     @FXML
@@ -64,7 +65,7 @@ public class SecondaryController {
     }
 
     @FXML
-    private void onAddClick(MouseEvent event) {
+    private void onAddClick(MouseEvent event) throws SQLException {
         String w = word.getText().trim().toLowerCase();
         String e = explain.getText().trim();
         if (w.length() == 0) {
@@ -75,6 +76,8 @@ public class SecondaryController {
             return;
         }
         announce.setText(DictionaryManagement.insertWord(w, e));
+        word.setText("");
+        explain.setText("");
     }
 
     @FXML
@@ -101,6 +104,7 @@ public class SecondaryController {
             return;
         }
         announce.setText(DictionaryManagement.deleteWord(w));
+        word.setText("");
     }
 
 }

@@ -42,7 +42,6 @@ public class DictionaryManager {
      * Insert word to the database.
      */
     public static void insertWord(final String word, final String detail) throws SQLException {
-
         String details = "<C><F><I><N><Q><big><b id='txt'>"+ word +"</b></big><br />-"+ detail + "</Q></N></I></F></C>";
         final String sqlInsertData = "insert into dictionary (word, detail) value (?, ?)";
         preparedness = connection.prepareStatement(sqlInsertData);
@@ -88,7 +87,7 @@ public class DictionaryManager {
      * Get words from database to word list.
      */
     public static void getAllWord() throws SQLException {
-        String sqlGetAllWord = "SELECT * FROM dictionary";
+        String sqlGetAllWord = "SELECT * FROM amitdb.dictionary";
         Statement st = connection.createStatement();
         ResultSet resultSet = st.executeQuery(sqlGetAllWord);
         while (resultSet.next()) {

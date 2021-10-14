@@ -9,9 +9,22 @@ public class DictionaryManagement {
      * Insert Word.
      */
     public static String insertWord(String target, String explain) {
-        Word word = new Word(target, explain);
-        Dictionary.addWord(word);
-        exportToFile(word);
+        LinkedList<Word> list = Dictionary.getWords();
+        for (Word check : list) {
+            if (!check.getWord_target().equalsIgnoreCase(target)) {
+                list.add(check);
+                try {
+                    DictionaryManager.insertWord(target,explain);
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+                break;
+            } else if (target.charAt(0) < check.getWord_target().charAt(0)){
+                return "This word doesn't exist or is already added!";
+            }
+        }
+        Dictionary.setWords(list);
+
         return (target + " is successfully added to dictionary!");
     }
 
@@ -54,6 +67,11 @@ public class DictionaryManagement {
         for (Word check : list) {
             if (check.getWord_target().equalsIgnoreCase(w)) {
                 list.remove(check);
+                try {
+                    DictionaryManager.deleteWord(w);
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
                 break;
             } else if (w.charAt(0) < check.getWord_target().charAt(0)) {
                 return "This word doesn't exist or is already deleted!";
@@ -62,11 +80,7 @@ public class DictionaryManagement {
         Dictionary.setWords(list);
 
         // Delete from database.
-        try {
-            DictionaryManager.deleteWord(w);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+
         return "The word is successfully deleted!";
     }
 
@@ -94,14 +108,4 @@ public class DictionaryManagement {
         return "Fixed successfully!";
     }
 
-    /**
-     * Export to file.
-     */
-    public static void exportToFile(Word word) {
-        try {
-            DictionaryManager.insertWord(word.getWord_target(), word.getWord_explain());
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
 }

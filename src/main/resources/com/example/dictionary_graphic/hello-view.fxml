@@ -10,7 +10,7 @@
 <VBox alignment="CENTER" spacing="20.0" stylesheets="@/com/example/dictionary_graphic/style.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dictionary_graphic.HelloController">
    <children>
         <TabPane prefHeight="399.0" prefWidth="422.0" tabClosingPolicy="UNAVAILABLE">
-            <Tab fx:id="translate" text="          Translate ">
+            <Tab fx:id="translate" onSelectionChanged="#update" text="          Translate ">
                 <AnchorPane minHeight="10.0" minWidth="0.0" prefHeight="326.0" prefWidth="422.0" styleClass="wall">
                     <ListView fx:id="listView" layoutX="10.0" layoutY="56.0" onMouseClicked="#searchOnClick" prefHeight="110.0" prefWidth="400.0" />
                     <ButtonBar accessibleRole="TEXT_AREA" layoutX="14.0" layoutY="14.0" prefHeight="35.0" prefWidth="400.0">
