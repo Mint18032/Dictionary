@@ -43,6 +43,10 @@
     -fx-padding: 0px;
 }
 
+#txt {
+    color: #006bb3;
+}
+
 #speak {
     -fx-background-color: transparent;
     -fx-border-width: 0;
