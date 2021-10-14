@@ -35,10 +35,6 @@
     -fx-background-color: #ffff99;
 }
 
-.label {
-    -fx-alignment: center;
-}
-
 #explain {
     -fx-padding: 0px;
 }

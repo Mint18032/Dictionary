@@ -2,13 +2,18 @@ package com.example.dictionary_graphic;
 
 import com.example.dictionary_graphic.*;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 import org.controlsfx.control.textfield.TextFields;
 
 import java.io.IOException;
@@ -27,6 +32,8 @@ public class HelloController implements Initializable {
     @FXML
     private WebView webView2;
     @FXML
+    private TabPane tabPane;
+    @FXML
     private TextArea textArea1;
     @FXML
     private TextArea textArea2;
@@ -36,6 +43,8 @@ public class HelloController implements Initializable {
     private Text text2;
     @FXML
     private TextField searchBox;
+    @FXML
+    private Tab google;
     @FXML
     private Tab translate;
     @FXML
@@ -83,13 +92,17 @@ public class HelloController implements Initializable {
     @FXML
     public void onSearchButtonClick(MouseEvent mouseEvent) {
         target = searchBox.getText().trim();
-        speak.setOpacity(100);
         webView.setOpacity(100);
         if (target == "") {
             webView.getEngine().loadContent("No word inserted!");
         } else {
             String explain = DictionaryManagement.dictionaryLookup(target);
-            webView.getEngine().loadContent(explain);
+            if (explain.equals("This word doesn't exist!")) {
+                alert(mouseEvent);
+            } else {
+                speak.setOpacity(100);
+                webView.getEngine().loadContent(explain);
+            }
         }
     }
 
@@ -167,6 +180,23 @@ public class HelloController implements Initializable {
     private void deleteWord(MouseEvent event) throws IOException {
         SecondaryController.deleteWord(event);
         updated = false;
+    }
+
+    @FXML
+    public void alert(MouseEvent event) {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        DialogPane dialogPane = alert.getDialogPane();
+        dialogPane.getStylesheets().add(getClass().getResource("/com/example/dictionary_graphic/style.css").toExternalForm());
+        dialogPane.getStyleClass().add("myDialog");
+        alert.setTitle("Word doesn't exist.");
+        alert.setHeaderText("This word doesn't exist!");
+        alert.setContentText("Do you want to use Google API?");
+        if (alert.showAndWait().get() == ButtonType.OK) {
+            textArea1.setText(target);
+            webView.setOpacity(0);
+            tabPane.getSelectionModel().selectLast();
+            searchOnline();
+        }
     }
 }
     
