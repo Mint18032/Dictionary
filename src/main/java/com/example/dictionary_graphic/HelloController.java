@@ -65,8 +65,7 @@ public class HelloController implements Initializable {
     @FXML
     public void textToSpeech() {
         TTS textToSpeech = new TTS("kevin16");
-        String word = searchBox.getText();
-        textToSpeech.say(word);
+        textToSpeech.say(target);
     }
 
     @Override
@@ -164,6 +163,7 @@ public class HelloController implements Initializable {
         searchBox.setText("");
         webView.setOpacity(0);
         webView.getEngine().loadContent("");
+        target = "";
         updated = true;
     }
 
