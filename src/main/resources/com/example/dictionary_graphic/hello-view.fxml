@@ -12,15 +12,15 @@
         <TabPane prefHeight="399.0" prefWidth="422.0" tabClosingPolicy="UNAVAILABLE">
             <Tab fx:id="translate" onSelectionChanged="#update" text="          Translate ">
                 <AnchorPane minHeight="10.0" minWidth="0.0" prefHeight="326.0" prefWidth="422.0" styleClass="wall">
-                    <ListView fx:id="listView" layoutX="10.0" layoutY="56.0" onMouseClicked="#searchOnClick" prefHeight="110.0" prefWidth="400.0" />
+                    <ListView fx:id="listView" layoutX="10.0" layoutY="51.0" onMouseClicked="#searchOnClick" prefHeight="110.0" prefWidth="400.0" />
                     <ButtonBar accessibleRole="TEXT_AREA" layoutX="14.0" layoutY="14.0" prefHeight="35.0" prefWidth="400.0">
                         <buttons>
                             <Button onMouseClicked="#onSearchButtonClick" prefHeight="30.0" prefWidth="40.0" styleClass="button" text="Search" />
                         </buttons>
                     </ButtonBar>
                     <TextField fx:id="searchBox" layoutX="10.0" layoutY="14.0" onKeyReleased="#search" prefHeight="35.0" prefWidth="320.0" promptText="Type here to search." />
-                    <WebView fx:id="webView" layoutX="10.0" layoutY="175.0" prefHeight="154.0" prefWidth="408.0" />
-                    <Button fx:id="speak" layoutX="381.0" layoutY="175.0" onMouseClicked="#textToSpeech" prefHeight="9.0" prefWidth="26.0" styleClass="button" text=" " />
+                    <WebView fx:id="webView" layoutX="10.0" layoutY="165.0" prefHeight="174.0" prefWidth="408.0" />
+                    <Button fx:id="speak" layoutX="380.0" layoutY="179.0" onMouseClicked="#textToSpeech" prefHeight="9.0" prefWidth="26.0" styleClass="button" text=" " />
                 </AnchorPane>
             </Tab>
             <Tab fx:id="custom" onSelectionChanged="#update" text="             Custom">
@@ -62,9 +62,9 @@
                                 <Font name="System Bold" size="12.0" />
                             </font>
                         </Text>
-                        <TextArea fx:id="textArea1" layoutX="10.0" layoutY="19.0" prefHeight="130.0" prefWidth="400.0" styleClass="result" />
-                        <Button layoutX="100.0" layoutY="155.0" onAction="#changeLanguage" prefHeight="31.0" prefWidth="120.0" styleClass="button" text="Change Language" />
-                        <Button layoutX="250.0" layoutY="155.0" onAction="#searchOnline" prefHeight="31.0" prefWidth="74.0" styleClass="button" text="Search" />
+                        <TextArea fx:id="textArea1" layoutX="10.0" layoutY="19.0" prefHeight="130.0" prefWidth="400.0" promptText="Type here." styleClass="result" />
+                        <Button fx:id="language" layoutX="248.0" layoutY="155.0" onAction="#changeLanguage" prefHeight="31.0" prefWidth="75.0" styleClass="button" text="EN-VI" textAlignment="CENTER" />
+                        <Button layoutX="334.0" layoutY="155.0" onAction="#searchOnline" prefHeight="31.0" prefWidth="75.0" styleClass="button" text="Translate" />
                         <WebView fx:id="webView2" layoutX="10.0" layoutY="195.0" prefHeight="130.0" prefWidth="400.0" />
                     </children>
                 </AnchorPane>
