@@ -25,7 +25,7 @@ public class Dictionary {
     }
 
     /**
-     * Adds a new word to Dictionary and brings ít to the relevant index.
+     * Adds a new word to Dictionary and brings it to the relevant index.
      * @param newWord to be added.
      */
     public static void addWord(Word newWord) {
@@ -53,9 +53,13 @@ public class Dictionary {
         return result;
     }
 
+    /**
+     * Add a new word to the last index of the list.
+     */
     public static void addWordFromDb(Word newWord) {
         words.add(newWord);
     }
+
     public static void setWords(LinkedList<Word> w) {
         words = w;
     }

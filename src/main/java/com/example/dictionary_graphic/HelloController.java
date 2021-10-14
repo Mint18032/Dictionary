@@ -1,32 +1,18 @@
 package com.example.dictionary_graphic;
 
-import com.example.dictionary_graphic.*;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.image.Image;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
-import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
-import javafx.stage.Modality;
-import javafx.stage.Stage;
-import org.controlsfx.control.textfield.TextFields;
-
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 import java.util.ResourceBundle;
-import java.util.stream.Collectors;
 
 public class HelloController implements Initializable {
-    ArrayList<String> listword = Dictionary.listWordTarget();
-
     @FXML
     private WebView webView;
     @FXML
@@ -63,6 +49,9 @@ public class HelloController implements Initializable {
         System.out.println("You clicked!");
     }
 
+    /**
+     * Updates the listview every key release event.
+     */
     @FXML
     public void search(KeyEvent event) {
         listView.getItems().clear();
@@ -70,6 +59,9 @@ public class HelloController implements Initializable {
         listView.setOpacity(100);
     }
 
+    /**
+     * Reads the word's target aloud.
+     */
     @FXML
     public void textToSpeech() {
         TTS textToSpeech = new TTS("kevin16");
@@ -80,7 +72,7 @@ public class HelloController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         listView.setOpacity(0);
-        listView.getItems().addAll(listword);
+        listView.getItems().addAll(Dictionary.listWordTarget());
         speak.setOpacity(0);
         webView.setOpacity(0);
         webView.getEngine().setUserStyleSheetLocation(getClass().getResource("/com/example/dictionary_graphic/style.css").toString());
@@ -89,6 +81,9 @@ public class HelloController implements Initializable {
         language.setTooltip(tooltip1);
     }
 
+    /**
+     * A look up method that excutes after the search button is clicked.
+     */
     @FXML
     public void onSearchButtonClick(MouseEvent mouseEvent) {
         target = searchBox.getText().trim();
@@ -106,6 +101,9 @@ public class HelloController implements Initializable {
         }
     }
 
+    /**
+     * A look up method that excutes when a word in listview is clicked.
+     */
     @FXML
     public void searchOnClick(MouseEvent event) {
         target = listView.getSelectionModel().getSelectedItem();
@@ -120,6 +118,9 @@ public class HelloController implements Initializable {
         }
     }
 
+    /**
+     * A look up method using Google API.
+     */
     @FXML
     public void searchOnline() {
         try {
@@ -150,12 +151,14 @@ public class HelloController implements Initializable {
         }
     }
 
+    /**
+     * Updates data and graphic after changes in data.
+     */
     @FXML
     private void update() {
         if (updated) return;
-        listword = Dictionary.listWordTarget();
         listView.getItems().clear();
-        listView.getItems().addAll(listword);
+        listView.getItems().addAll(Dictionary.listWordTarget());
         listView.setOpacity(0);
         speak.setOpacity(0);
         searchBox.setText("");
@@ -182,12 +185,15 @@ public class HelloController implements Initializable {
         updated = false;
     }
 
+    /**
+     * Shows an alert when the word inserted in the search box does not exist in the dictionary.
+     * Suggests using Google API.
+     */
     @FXML
     public void alert(MouseEvent event) {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         DialogPane dialogPane = alert.getDialogPane();
         dialogPane.getStylesheets().add(getClass().getResource("/com/example/dictionary_graphic/style.css").toExternalForm());
-        dialogPane.getStyleClass().add("myDialog");
         alert.setTitle("Word doesn't exist.");
         alert.setHeaderText("This word doesn't exist!");
         alert.setContentText("Do you want to use Google API?");

@@ -17,7 +17,7 @@ public class DictionaryManager {
     }
 
     /**
-     * Search detail of word in database.
+     * Searches detail of word in the database.
      */
     public static String searchWord(String word) throws SQLException {
         final String sqlSearchDetail = "select detail from dictionary where word=?";
@@ -35,7 +35,7 @@ public class DictionaryManager {
     }
 
     /**
-     * Insert word to the database.
+     * Inserts word to the database.
      */
     public static void insertWord(final String word, final String detail) throws SQLException {
         final String sqlInsertData = "insert into dictionary (word, detail) value (?, ?)";
@@ -49,7 +49,7 @@ public class DictionaryManager {
     }
 
     /**
-     * Delete word from the database.
+     * Deletes a word from the database.
      */
     public static void deleteWord(String word) throws SQLException {
         String sqlDeleteData = "delete from dictionary where word = ?";
@@ -61,7 +61,7 @@ public class DictionaryManager {
     }
 
     /**
-     * Fix Word.
+     * Fixes a Word's detail.
      */
     public static void fixWord(String word, String detail) throws SQLException {
         String sqlFixData = "update dictionary set detail = ? where word = ? ";
@@ -74,7 +74,7 @@ public class DictionaryManager {
     }
 
     /**
-     * Get words from database to word list.
+     * Takes words from database to word list.
      */
     public static void getAllWord() throws SQLException {
         String sqlGetAllWord = "SELECT * FROM amitdb.dictionary ORDER BY word";

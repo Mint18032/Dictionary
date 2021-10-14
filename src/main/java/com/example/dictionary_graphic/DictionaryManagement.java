@@ -7,7 +7,7 @@ import java.util.Locale;
 
 public class DictionaryManagement {
     /**
-     * Insert Word.
+     * Inserts Word.
      */
     public static String insertWord(String target, String explain) {
         if (!dictionaryLookup(target).equals("This word doesn't exist!")) {
@@ -30,7 +30,7 @@ public class DictionaryManagement {
     }
 
     /**
-     * Lookup Word.
+     * Looks up Word to find their exlanations.
      */
     public static String dictionaryLookup(String w) {
         w = w.toLowerCase();
@@ -45,7 +45,7 @@ public class DictionaryManagement {
     }
 
     /**
-     * Find related words.
+     * Finds related words to be showed in listview.
      */
     public static ArrayList<String> dictionaryRelatedWord(String w) {
         w = w.toLowerCase();
@@ -57,10 +57,12 @@ public class DictionaryManagement {
                 break;
             }
         }
+
         return list;
     }
+
     /**
-     * Remove a word from the Dictionary.
+     * Removes a word from the Dictionary.
      */
     public static String deleteWord(String w) {
         LinkedList<Word> list = Dictionary.getWords();
@@ -85,7 +87,7 @@ public class DictionaryManagement {
     }
 
     /**
-     * Fix Word.
+     * Fixes Word.explain.
      */
     public static String fixWord(String target, String explain) {
         // Fix list.
@@ -106,7 +108,7 @@ public class DictionaryManagement {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+
         return "Fixed successfully!";
     }
-
 }

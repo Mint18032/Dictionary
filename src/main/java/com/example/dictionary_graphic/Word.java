@@ -1,8 +1,7 @@
 package com.example.dictionary_graphic;
 
-
 /**
- * Represent a word with its definitions.
+ * Represents a word with its definitions.
  */
 public class Word {
     //Variable

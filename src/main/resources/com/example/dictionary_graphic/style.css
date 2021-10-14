@@ -35,6 +35,11 @@
     -fx-background-color: #ffff99;
 }
 
+#announce {
+    -fx-font-weight: bold;
+    -fx-alignment: center;
+}
+
 #explain {
     -fx-padding: 0px;
 }
@@ -49,17 +54,17 @@
 }
 
 #translate {
-    -fx-background-image: url("/com/example/dictionary_graphic/translate.png");
+    -fx-background-image: url("/com/example/dictionary_graphic/image/translate.png");
 }
 
 #custom {
-    -fx-background-image: url("/com/example/dictionary_graphic/custom.png");
+    -fx-background-image: url("/com/example/dictionary_graphic/image/custom.png");
 }
 
 #google {
-    -fx-background-image: url("/com/example/dictionary_graphic/google.png");
+    -fx-background-image: url("/com/example/dictionary_graphic/image/google.png");
 }
 
 #speak {
-    -fx-background-image: url("/com/example/dictionary_graphic/speak.png");
+    -fx-background-image: url("/com/example/dictionary_graphic/image/speak.png");
 }

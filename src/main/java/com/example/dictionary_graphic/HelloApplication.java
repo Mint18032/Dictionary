@@ -10,11 +10,14 @@ import java.io.IOException;
 import java.sql.SQLException;
 
 public class HelloApplication extends Application {
+    /**
+     * Starts application's primary window.
+     */
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
-        Image logo = new Image("/com/example/dictionary_graphic/logo.jpg");
+        Image logo = new Image("/com/example/dictionary_graphic/image/logo.jpg");
         stage.getIcons().add(logo);
         stage.setTitle("Khanh & Minh Dictionary");
         stage.setScene(scene);

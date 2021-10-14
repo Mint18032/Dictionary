@@ -5,7 +5,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.control.Tooltip;
 import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Modality;
@@ -22,12 +21,15 @@ public class SecondaryController {
     @FXML
     public Label announce;
 
+    /**
+     * Creates a new window that executes add word function.
+     */
     @FXML
     public static void addNewWord(MouseEvent event) throws IOException {
         Stage AddStage = new Stage();
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("add-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
-        Image logo = new Image("/com/example/dictionary_graphic/logo.jpg");
+        Image logo = new Image("/com/example/dictionary_graphic/image/logo.jpg");
         AddStage.getIcons().add(logo);
         AddStage.setTitle("Add new word");
         AddStage.setScene(scene);
@@ -36,12 +38,15 @@ public class SecondaryController {
         AddStage.show();
     }
 
+    /**
+     * Creates a new window that executes fix word function.
+     */
     @FXML
     public static void fixWord(MouseEvent event) throws IOException {
         Stage AddStage = new Stage();
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("fix-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
-        Image logo = new Image("/com/example/dictionary_graphic/logo.jpg");
+        Image logo = new Image("/com/example/dictionary_graphic/image/logo.jpg");
         AddStage.getIcons().add(logo);
         AddStage.setTitle("Fix word");
         AddStage.setScene(scene);
@@ -50,12 +55,15 @@ public class SecondaryController {
         AddStage.show();
     }
 
+    /**
+     * Creates a new window that executes delete word function.
+     */
     @FXML
     public static void deleteWord(MouseEvent event) throws IOException {
         Stage AddStage = new Stage();
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("delete-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
-        Image logo = new Image("/com/example/dictionary_graphic/logo.jpg");
+        Image logo = new Image("/com/example/dictionary_graphic/image/logo.jpg");
         AddStage.getIcons().add(logo);
         AddStage.setTitle("Delete word");
         AddStage.setScene(scene);
@@ -64,6 +72,9 @@ public class SecondaryController {
         AddStage.show();
     }
 
+    /**
+     * Executes add word function.
+     */
     @FXML
     private void onAddClick(MouseEvent event) throws SQLException {
         String w = word.getText().trim().toLowerCase();
@@ -80,6 +91,9 @@ public class SecondaryController {
         explain.setText("");
     }
 
+    /**
+     * Executes fix word function.
+     */
     @FXML
     private void onFixClick(MouseEvent event) {
         String w = word.getText().trim();
@@ -96,6 +110,9 @@ public class SecondaryController {
         explain.setText("");
     }
 
+    /**
+     * Executes delete word function.
+     */
     @FXML
     private void onDeleteClick(MouseEvent event) {
         String w = word.getText().trim();

@@ -9,8 +9,10 @@ import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 
 public class API {
+    /**
+     * Translates using Google API.
+     */
     public String translate(String langFrom, String langTo, String text) throws IOException {
-
         String urlStr = "https://script.google.com/macros/s/AKfycbxYCfhmSSM6P4mmNB-xa3H9Ku8jNbIdiyaPWSemwZXCql169ltg/exec" +
                 "?q=" + URLEncoder.encode(text, StandardCharsets.UTF_8) +
                 "&target=" + langTo +
@@ -25,6 +27,7 @@ public class API {
             response.append(inputLine);
         }
         in.close();
+
         return response.toString();
     }
 }
