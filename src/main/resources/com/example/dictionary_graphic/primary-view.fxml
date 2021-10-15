@@ -7,7 +7,7 @@
 <?import javafx.scene.text.*?>
 <?import javafx.scene.web.*?>
 
-<VBox alignment="CENTER" spacing="20.0" stylesheets="@/com/example/dictionary_graphic/style.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dictionary_graphic.HelloController">
+<VBox alignment="CENTER" spacing="20.0" stylesheets="@/com/example/dictionary_graphic/style.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dictionary_graphic.PrimaryController">
    <children>
         <TabPane fx:id="tabPane" prefHeight="462.0" prefWidth="502.0" tabClosingPolicy="UNAVAILABLE">
             <Tab fx:id="translate" onSelectionChanged="#update" text="        Translate">

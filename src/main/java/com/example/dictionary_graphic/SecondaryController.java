@@ -27,9 +27,9 @@ public class SecondaryController {
     @FXML
     public static void addNewWord(MouseEvent event) throws IOException {
         Stage AddStage = new Stage(); // Additional Stage
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("add-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("add-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
-        AddStage.getIcons().add(HelloApplication.logo);
+        AddStage.getIcons().add(Main.logo);
         AddStage.setTitle("Add new word");
         AddStage.setScene(scene);
         AddStage.initModality(Modality.APPLICATION_MODAL);
@@ -43,9 +43,9 @@ public class SecondaryController {
     @FXML
     public static void fixWord(MouseEvent event) throws IOException {
         Stage AddStage = new Stage();
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("fix-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fix-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
-        AddStage.getIcons().add(HelloApplication.logo);
+        AddStage.getIcons().add(Main.logo);
         AddStage.setTitle("Fix word");
         AddStage.setScene(scene);
         AddStage.initModality(Modality.APPLICATION_MODAL);
@@ -59,9 +59,9 @@ public class SecondaryController {
     @FXML
     public static void deleteWord(MouseEvent event) throws IOException {
         Stage AddStage = new Stage();
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("delete-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Main .class.getResource("delete-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
-        AddStage.getIcons().add(HelloApplication.logo);
+        AddStage.getIcons().add(Main.logo);
         AddStage.setTitle("Delete word");
         AddStage.setScene(scene);
         AddStage.initModality(Modality.APPLICATION_MODAL);
@@ -83,7 +83,7 @@ public class SecondaryController {
             announce.setText("Please type the word's explanation!");
             return;
         }
-        announce.setText("Please wait a few seconds!");
+        announce.setText("Please wait for a few seconds!");
         announce.setText(DictionaryManagement.insertWord(w, e));
         word.setText("");
         explain.setText("");

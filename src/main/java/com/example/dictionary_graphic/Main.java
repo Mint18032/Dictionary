@@ -9,14 +9,14 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.sql.SQLException;
 
-public class HelloApplication extends Application {
+public class Main extends Application {
     public static Image logo;
     /**
      * Starts application's primary window.
      */
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("primary-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         logo = new Image("/com/example/dictionary_graphic/image/logo.jpg");
         stage.getIcons().add(logo);

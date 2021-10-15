@@ -53,7 +53,7 @@ public class DictionaryManagement {
         for (Word check : Dictionary.getWords()) {
             if (check.getWord_target().toLowerCase().startsWith(w)) {
                 list.add(check.getWord_target());
-            } else if (w.charAt(0) < check.getWord_target().toLowerCase().charAt(0)) { // && !list.isEmpty()
+            } else if (w.charAt(0) < check.getWord_target().toLowerCase().charAt(0)) {
                 break;
             }
         }

@@ -12,7 +12,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-public class HelloController implements Initializable {
+public class PrimaryController implements Initializable {
     @FXML
     private WebView webView;
     @FXML
@@ -131,6 +131,9 @@ public class HelloController implements Initializable {
         }
     }
 
+    /**
+     * Controls language.
+     */
     public void changeLanguage() {
         String s = text1.getText();
         text1.setText(text2.getText());
