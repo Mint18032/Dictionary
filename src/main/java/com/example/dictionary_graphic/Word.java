@@ -40,4 +40,15 @@ public class Word {
         setWord_target(word_target);
         setWord_explain(word_explain);
     }
+
+    /**
+     * Compares 2 words.
+     * @return false if "after" should not be placed after "before".
+     */
+    public boolean isBefore(Word other) {
+        if (word_target.compareTo(other.getWord_target()) <= 0) {
+            return true;
+        }
+        return false;
+    }
 }

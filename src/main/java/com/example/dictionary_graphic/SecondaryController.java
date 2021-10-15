@@ -83,6 +83,7 @@ public class SecondaryController {
             announce.setText("Please type the word's explanation!");
             return;
         }
+        announce.setText("Please wait a few seconds!");
         announce.setText(DictionaryManagement.insertWord(w, e));
         word.setText("");
         explain.setText("");

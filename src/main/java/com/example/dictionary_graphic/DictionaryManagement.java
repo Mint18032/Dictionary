@@ -14,14 +14,14 @@ public class DictionaryManagement {
             return "This word is already exist!";
         }
 
-        // Add word to list.
         explain = "<C><F><I><N><Q><big><b id='txt'>"+target+"</b></big><br />-"+explain+"</Q></N></I></F></C>";
         Word word = new Word(target, explain);
-        Dictionary.addWord(word);
-
-        // Add word to database.
         try {
+            // Add word to database.
             DictionaryManager.insertWord(target, explain);
+            // Update list.
+            Dictionary.clear();
+            DictionaryManager.getAllWord();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -37,8 +37,8 @@ public class DictionaryManagement {
         for (Word check : Dictionary.getWords()) {
             if (check.getWord_target().equalsIgnoreCase(w)) {
                 return (check.getWord_explain());
-//            } else if (w.charAt(0) < check.getWord_target().toLowerCase().charAt(0)) {
-//                break;
+            } else if (w.charAt(0) < check.getWord_target().toLowerCase().charAt(0)) {
+                break;
             }
         }
         return "This word doesn't exist!";
@@ -53,7 +53,7 @@ public class DictionaryManagement {
         for (Word check : Dictionary.getWords()) {
             if (check.getWord_target().toLowerCase().startsWith(w)) {
                 list.add(check.getWord_target());
-            } else if (w.charAt(0) < check.getWord_target().toLowerCase().charAt(0) && !list.isEmpty()) {
+            } else if (w.charAt(0) < check.getWord_target().toLowerCase().charAt(0)) { // && !list.isEmpty()
                 break;
             }
         }

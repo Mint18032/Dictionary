@@ -1,23 +1,15 @@
 package com.example.dictionary_graphic;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
+import java.util.Locale;
 
 public class Dictionary {
     private static LinkedList<Word> words = new LinkedList<Word>();
     public static LinkedList<Word> getWords() {
         return words;
-    }
-
-    /**
-     * Compares 2 words.
-     * @return false if "after" should not be placed after "before".
-     */
-    public static boolean rightPlace(Word before, Word after) {
-        if (before.getWord_target().compareTo(after.getWord_target()) <= 0)
-            return true;
-        return false;
     }
 
     /**
@@ -28,7 +20,7 @@ public class Dictionary {
         words.add(newWord);
 
         for (int i = words.size() - 1; i > 0; --i) {
-            if (!rightPlace(words.get(i - 1), words.get(i))) {
+            if (!words.get(i - 1).isBefore(words.get(i))) {
                 Word temp = words.set(i, words.get(i-1));
                 words.set(i-1, temp);
             } else {
@@ -49,7 +41,7 @@ public class Dictionary {
     }
 
     /**
-     * Add a new word to the last index of the list.
+     * Adds a new word to the last index of the list.
      */
     public static void addWordFromDb(Word newWord) {
         words.add(newWord);
@@ -57,5 +49,12 @@ public class Dictionary {
 
     public static void setWords(LinkedList<Word> w) {
         words = w;
+    }
+
+    /**
+     * Clears the list.
+     */
+    public static void clear() {
+        words.clear();
     }
 }
