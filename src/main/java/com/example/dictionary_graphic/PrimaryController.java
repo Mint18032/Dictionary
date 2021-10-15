@@ -161,6 +161,8 @@ public class PrimaryController implements Initializable {
         searchBox.setText("");
         webView.setOpacity(0);
         webView.getEngine().loadContent("");
+        webView2.getEngine().loadContent("");
+        text1.setText("");
         target = "";
         updated = true;
     }

@@ -103,6 +103,7 @@ public class SecondaryController {
             announce.setText("Please type new explanation!");
             return;
         }
+        announce.setText("Please wait for a few seconds!");
         announce.setText(DictionaryManagement.fixWord(w, e));
         word.setText("");
         explain.setText("");
@@ -118,6 +119,7 @@ public class SecondaryController {
             announce.setText("Please type the word!");
             return;
         }
+        announce.setText("Please wait for a few seconds!");
         announce.setText(DictionaryManagement.deleteWord(w));
         word.setText("");
     }
