@@ -8,10 +8,6 @@
   -fx-color: #000000;
 }
 
-.result {
-    -fx-border-color: #42b6f5;
-}
-
 .tab {
     -fx-padding: 1em 3.35em;
     -fx-background-color: #33cccc;

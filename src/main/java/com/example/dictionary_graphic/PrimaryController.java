@@ -42,11 +42,6 @@ public class PrimaryController implements Initializable {
     private boolean updated;
     private Tooltip tooltip1;
 
-    @FXML
-    private void onAddButtonClick() {
-        System.out.println("You clicked!");
-    }
-
     /**
      * Updates the listview every key release event.
      */
