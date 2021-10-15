@@ -30,7 +30,7 @@ public class DictionaryManagement {
     }
 
     /**
-     * Looks up Word to find their exlanations.
+     * Looks up Word to find their explanations.
      */
     public static String dictionaryLookup(String w) {
         w = w.toLowerCase();
