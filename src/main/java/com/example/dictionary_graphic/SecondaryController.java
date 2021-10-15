@@ -26,11 +26,10 @@ public class SecondaryController {
      */
     @FXML
     public static void addNewWord(MouseEvent event) throws IOException {
-        Stage AddStage = new Stage();
+        Stage AddStage = new Stage(); // Additional Stage
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("add-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
-        Image logo = new Image("/com/example/dictionary_graphic/image/logo.jpg");
-        AddStage.getIcons().add(logo);
+        AddStage.getIcons().add(HelloApplication.logo);
         AddStage.setTitle("Add new word");
         AddStage.setScene(scene);
         AddStage.initModality(Modality.APPLICATION_MODAL);
@@ -46,8 +45,7 @@ public class SecondaryController {
         Stage AddStage = new Stage();
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("fix-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
-        Image logo = new Image("/com/example/dictionary_graphic/image/logo.jpg");
-        AddStage.getIcons().add(logo);
+        AddStage.getIcons().add(HelloApplication.logo);
         AddStage.setTitle("Fix word");
         AddStage.setScene(scene);
         AddStage.initModality(Modality.APPLICATION_MODAL);
@@ -63,8 +61,7 @@ public class SecondaryController {
         Stage AddStage = new Stage();
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("delete-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
-        Image logo = new Image("/com/example/dictionary_graphic/image/logo.jpg");
-        AddStage.getIcons().add(logo);
+        AddStage.getIcons().add(HelloApplication.logo);
         AddStage.setTitle("Delete word");
         AddStage.setScene(scene);
         AddStage.initModality(Modality.APPLICATION_MODAL);

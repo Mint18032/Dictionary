@@ -30,8 +30,6 @@ public class HelloController implements Initializable {
     @FXML
     private TextField searchBox;
     @FXML
-    private Tab google;
-    @FXML
     private Tab translate;
     @FXML
     private String target;
@@ -56,7 +54,6 @@ public class HelloController implements Initializable {
     public void search(KeyEvent event) {
         listView.getItems().clear();
         listView.getItems().addAll(DictionaryManagement.dictionaryRelatedWord(searchBox.getText()));
-        listView.setOpacity(100);
     }
 
     /**
@@ -70,7 +67,6 @@ public class HelloController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        listView.setOpacity(0);
         listView.getItems().addAll(Dictionary.listWordTarget());
         speak.setOpacity(0);
         webView.setOpacity(0);
@@ -158,7 +154,6 @@ public class HelloController implements Initializable {
         if (updated) return;
         listView.getItems().clear();
         listView.getItems().addAll(Dictionary.listWordTarget());
-        listView.setOpacity(0);
         speak.setOpacity(0);
         searchBox.setText("");
         webView.setOpacity(0);
@@ -196,11 +191,11 @@ public class HelloController implements Initializable {
         dialogPane.getStylesheets().add(getClass().getResource("/com/example/dictionary_graphic/style.css").toExternalForm());
         alert.setTitle("Word doesn't exist.");
         alert.setHeaderText("This word doesn't exist!");
-        alert.setContentText("Do you want to use Google API?");
+        alert.setContentText("Do you want to search it online?");
         if (alert.showAndWait().get() == ButtonType.OK) {
             textArea1.setText(target);
             webView.setOpacity(0);
-            tabPane.getSelectionModel().selectLast();
+            tabPane.getSelectionModel().selectNext();
             searchOnline();
         }
     }

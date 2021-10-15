@@ -3,18 +3,17 @@
     -fx-border-color: #000000;
 }
 
-.result {
-    -fx-background-color: #fff;
-    -fx-border-color: #42b6f5;
-}
-
 .button:hover {
   -fx-background-color: #29a3a3;
   -fx-color: #000000;
 }
 
+.result {
+    -fx-border-color: #42b6f5;
+}
+
 .tab {
-    -fx-padding: 13px 16px;
+    -fx-padding: 1em 3.35em;
     -fx-background-color: #33cccc;
     -fx-font-weight: bold;
     -fx-focus-color: transparent;
@@ -23,7 +22,6 @@
 
 .tab:hover {
     -fx-background-color: #29a3a3;
-    -fx-width: 10%;
     -fx-color: gray;
 }
 
@@ -40,15 +38,12 @@
     -fx-alignment: center;
 }
 
-#explain {
-    -fx-padding: 0px;
-}
-
 #txt {
     color: #006bb3;
 }
 
 #speak {
+    -fx-background-image: url("/com/example/dictionary_graphic/image/speak.png");
     -fx-background-color: transparent;
     -fx-border-width: 0;
 }
@@ -63,8 +58,4 @@
 
 #google {
     -fx-background-image: url("/com/example/dictionary_graphic/image/google.png");
-}
-
-#speak {
-    -fx-background-image: url("/com/example/dictionary_graphic/image/speak.png");
 }
