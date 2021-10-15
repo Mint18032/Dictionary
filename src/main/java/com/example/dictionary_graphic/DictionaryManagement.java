@@ -37,7 +37,7 @@ public class DictionaryManagement {
         for (Word check : Dictionary.getWords()) {
             if (check.getWord_target().equalsIgnoreCase(w)) {
                 return (check.getWord_explain());
-            } else if (w.charAt(0) < check.getWord_target().toLowerCase().charAt(0)) {
+            } else if (w.compareTo(check.getWord_target().toLowerCase()) < 0) {
                 break;
             }
         }
@@ -79,7 +79,7 @@ public class DictionaryManagement {
                     e.printStackTrace();
                 }
                 break;
-            } else if (w.charAt(0) < check.getWord_target().toLowerCase().charAt(0)) {
+            } else if (w.compareTo(check.getWord_target().toLowerCase()) < 0) {
                 return "This word doesn't exist or is already deleted!";
             }
         }
@@ -98,7 +98,7 @@ public class DictionaryManagement {
             if (check.getWord_target().equalsIgnoreCase(target)) {
                 check.setWord_explain(explain);
                 break;
-            } else if (target.charAt(0) < check.getWord_target().charAt(0)) {
+            } else if (target.compareToIgnoreCase(check.getWord_target()) < 0) {
                 return "This word doesn't exist!";
             }
         }

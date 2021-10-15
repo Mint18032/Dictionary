@@ -82,14 +82,15 @@ public class PrimaryController implements Initializable {
     @FXML
     public void onSearchButtonClick(MouseEvent mouseEvent) {
         target = searchBox.getText().trim();
-        webView.setOpacity(100);
         if (target == "") {
+            webView.setOpacity(100);
             webView.getEngine().loadContent("No word inserted!");
         } else {
             String explain = DictionaryManagement.dictionaryLookup(target);
             if (explain.equals("This word doesn't exist!")) {
                 alert(mouseEvent);
             } else {
+                webView.setOpacity(100);
                 speak.setOpacity(100);
                 webView.getEngine().loadContent(explain);
             }
@@ -119,7 +120,7 @@ public class PrimaryController implements Initializable {
     @FXML
     public void searchOnline() {
         try {
-            if (text1.getText().equals("Tiếng Anh")) {
+            if (text1.getText().equals("English")) {
                 API api = new API();
                 webView2.getEngine().loadContent((api.translate("en", "vi", textArea1.getText())));
             } else {
@@ -138,7 +139,7 @@ public class PrimaryController implements Initializable {
         String s = text1.getText();
         text1.setText(text2.getText());
         text2.setText(s);
-        if (text1.getText().length() == 10) { // Tieng Viet
+        if (text1.getText().equals("Vietnamese")) {
             language.setText("EN-VI");
             tooltip1.setText("Dịch tiếng Anh.");
             textArea1.setPromptText("Gõ vào đây.");
