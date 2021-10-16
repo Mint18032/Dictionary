@@ -49,6 +49,7 @@ public class PrimaryController implements Initializable {
     public void search(KeyEvent event) {
         listView.getItems().clear();
         listView.getItems().addAll(DictionaryManagement.dictionaryRelatedWord(searchBox.getText()));
+        listView.scrollTo(searchBox.getText());
     }
 
     /**
@@ -153,6 +154,7 @@ public class PrimaryController implements Initializable {
         if (updated) return;
         listView.getItems().clear();
         listView.getItems().addAll(Dictionary.listWordTarget());
+        listView.scrollTo(searchBox.getText());
         speak.setOpacity(0);
         searchBox.setText("");
         webView.setOpacity(0);
