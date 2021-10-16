@@ -48,7 +48,6 @@ Type a word in the first textfield and its meaning in the other field then click
 
 The label will tell you if the adding process is success or not. 
 In paticular:
-* "Please wait for a few seconds!" means it is processing.
 * "The word is successfully added to dictionary!" means you can search it in you dictionary from now on.
 * "Please type your word!" will be presented if you did not fill the first textfield.
 * "Please type new explanation!" when you did not type the meaning.
@@ -58,7 +57,7 @@ In paticular:
 You can fix an existing word's defition by this function.
 
 Click "Fix word", a small window will appear.
-Type a word in the first textfield and its meaning in the other field then click "Fix".
+Type a word in the first textfield and its meaning in the other field then click "Fix" and wait for a few seconds.
 
 The label will tell you if the process is success or not. 
 

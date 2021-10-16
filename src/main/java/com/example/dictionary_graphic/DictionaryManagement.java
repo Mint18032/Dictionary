@@ -33,11 +33,10 @@ public class DictionaryManagement {
      * Looks up Word to find their explanations.
      */
     public static String dictionaryLookup(String w) {
-        w = w.toLowerCase();
         for (Word check : Dictionary.getWords()) {
             if (check.getWord_target().equalsIgnoreCase(w)) {
                 return (check.getWord_explain());
-            } else if (w.compareTo(check.getWord_target().toLowerCase()) < 0) {
+            } else if (w.compareToIgnoreCase(check.getWord_target()) < 0) {
                 break;
             }
         }
@@ -66,7 +65,6 @@ public class DictionaryManagement {
      * Removes a word from the Dictionary.
      */
     public static String deleteWord(String w) {
-        w = w.toLowerCase();
         LinkedList<Word> list = Dictionary.getWords();
         for (Word check : list) {
             if (check.getWord_target().equalsIgnoreCase(w)) {
@@ -80,7 +78,7 @@ public class DictionaryManagement {
                     e.printStackTrace();
                 }
                 break;
-            } else if (w.compareTo(check.getWord_target().toLowerCase()) < 0) {
+            } else if (w.compareToIgnoreCase(check.getWord_target()) < 0) {
                 return "This word doesn't exist or is already deleted!";
             }
         }

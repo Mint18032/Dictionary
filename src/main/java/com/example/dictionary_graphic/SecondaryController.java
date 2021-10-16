@@ -74,7 +74,7 @@ public class SecondaryController {
      */
     @FXML
     private void onAddClick(MouseEvent event) throws SQLException {
-        String w = word.getText().trim().toLowerCase();
+        String w = word.getText().trim();
         String e = explain.getText().trim();
         if (w.length() == 0) {
             announce.setText("Please type your word!");
@@ -83,7 +83,6 @@ public class SecondaryController {
             announce.setText("Please type the word's explanation!");
             return;
         }
-        announce.setText("Please wait for a few seconds!");
         announce.setText(DictionaryManagement.insertWord(w, e));
         word.setText("");
         explain.setText("");
@@ -103,7 +102,6 @@ public class SecondaryController {
             announce.setText("Please type new explanation!");
             return;
         }
-        announce.setText("Please wait for a few seconds!");
         announce.setText(DictionaryManagement.fixWord(w, e));
         word.setText("");
         explain.setText("");
@@ -119,7 +117,6 @@ public class SecondaryController {
             announce.setText("Please type the word!");
             return;
         }
-        announce.setText("Please wait for a few seconds!");
         announce.setText(DictionaryManagement.deleteWord(w));
         word.setText("");
     }
