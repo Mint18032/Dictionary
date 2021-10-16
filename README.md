@@ -69,8 +69,10 @@ Type a word in the textfield then click "Delete".
 
 The label will tell you if the process is success or not.
 
-## Captures
-![search-clicked](https://user-images.githubusercontent.com/79392486/137505209-4a909829-247d-428c-ac60-c6a9e56ff7b6.png)
+## Captures and Video
+![DEMO VIDEO](https://youtu.be/rbf4NzZGscM)
+
+![search-clicked](https://user-images.githubusercontent.com/79392486/137594355-010a87c8-2bcb-44e4-a0aa-cf41f4bf5d57.png)
 ![googleAPI-VI-EN](https://user-images.githubusercontent.com/79392486/137505432-c16d93cd-ebf2-4c2e-98b8-ce165746c200.png)
 ![custom-tab](https://user-images.githubusercontent.com/79392486/137505503-4bd20886-75ed-43c8-91aa-5136682b252b.png)
 
