@@ -12,7 +12,7 @@ A user-friendly dictionary application.
 
 ### Setup Environment
 * Download MySQL Installer [MySQL](https://dev.mysql.com/downloads) to setup MySQL Server and Workbench (this [video](https://www.youtube.com/watch?v=OM4aZJW_Ojs) might help)
-* Download Javafx [Javafx](https://openjfx.io/openjfx-docs/#introduction) to setup Javafx library(this [video](https://www.youtube.com/watch?v=9XJicRt_FaI) might help from 8:15 to 12:13)
+* Download Javafx [Javafx](https://openjfx.io/openjfx-docs/#introduction) to setup Javafx library(follow this [video](https://www.youtube.com/watch?v=9XJicRt_FaI) from 8:15 to 12:13)
 * Reload the maven library before run the project.
 ### Setup Project
 * Open MySQL Workbench and run the SQL script in resources/dictionary.sql to import database (follow this [video](https://youtu.be/uyP46E0UA9I?t=248) from 4:08 to 6:00)
@@ -70,7 +70,7 @@ Type a word in the textfield then click "Delete".
 The label will tell you if the process is success or not.
 
 ## Captures and Video
-![DEMO VIDEO](https://youtu.be/rbf4NzZGscM)
+[DEMO VIDEO](https://youtu.be/rbf4NzZGscM)
 
 ![search-clicked](https://user-images.githubusercontent.com/79392486/137594355-010a87c8-2bcb-44e4-a0aa-cf41f4bf5d57.png)
 ![googleAPI-VI-EN](https://user-images.githubusercontent.com/79392486/137505432-c16d93cd-ebf2-4c2e-98b8-ce165746c200.png)
