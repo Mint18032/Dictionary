@@ -12,7 +12,7 @@
         <TabPane fx:id="tabPane" prefHeight="462.0" prefWidth="502.0" tabClosingPolicy="UNAVAILABLE">
             <Tab fx:id="translate" onSelectionChanged="#update" text="        Translate">
                 <AnchorPane minHeight="10.0" minWidth="0.0" prefHeight="326.0" prefWidth="422.0" styleClass="wall">
-                    <ListView fx:id="listView" layoutX="10.0" layoutY="51.0" onMouseClicked="#searchOnClick" prefHeight="135.0" prefWidth="482.0" />
+                    <ListView fx:id="listView" layoutX="10.0" layoutY="51.0" onMouseClicked="#searchOnClick" pickOnBounds="false" prefHeight="135.0" prefWidth="482.0" />
                     <ButtonBar accessibleRole="TEXT_AREA" layoutX="14.0" layoutY="14.0" prefHeight="35.0" prefWidth="400.0" />
                     <TextField fx:id="searchBox" layoutX="10.0" layoutY="14.0" onKeyReleased="#search" prefHeight="35.0" prefWidth="392.0" promptText="Type here to search." />
                     <WebView fx:id="webView" layoutX="10.0" layoutY="193.0" prefHeight="207.0" prefWidth="482.0" />

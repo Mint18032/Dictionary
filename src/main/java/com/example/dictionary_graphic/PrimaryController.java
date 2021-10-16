@@ -47,9 +47,14 @@ public class PrimaryController implements Initializable {
      */
     @FXML
     public void search(KeyEvent event) {
+        if (searchBox.getText().trim().length() == 0) {
+            listView.setOpacity(0);
+            return;
+        }
+        listView.setOpacity(100);
+        listView.scrollTo(0);
         listView.getItems().clear();
-        listView.getItems().addAll(DictionaryManagement.dictionaryRelatedWord(searchBox.getText()));
-        listView.scrollTo(searchBox.getText());
+        listView.getItems().addAll(DictionaryManagement.dictionaryRelatedWord(searchBox.getText().trim()));
     }
 
     /**
@@ -63,7 +68,8 @@ public class PrimaryController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        listView.getItems().addAll(Dictionary.listWordTarget());
+//        listView.getItems().addAll(Dictionary.listWordTarget());
+        listView.setOpacity(0);
         speak.setOpacity(0);
         webView.setOpacity(0);
         webView.getEngine().setUserStyleSheetLocation(getClass().getResource("/com/example/dictionary_graphic/style.css").toString());
@@ -152,9 +158,10 @@ public class PrimaryController implements Initializable {
     @FXML
     private void update() {
         if (updated) return;
+        listView.scrollTo(0);
         listView.getItems().clear();
         listView.getItems().addAll(Dictionary.listWordTarget());
-        listView.scrollTo(searchBox.getText());
+        listView.setOpacity(0);
         speak.setOpacity(0);
         searchBox.setText("");
         webView.setOpacity(0);

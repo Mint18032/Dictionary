@@ -48,12 +48,13 @@ public class DictionaryManagement {
      * Finds related words to be showed in listview.
      */
     public static ArrayList<String> dictionaryRelatedWord(String w) {
-        w = w.toLowerCase();
         ArrayList<String> list = new ArrayList<>();
+        if (w.length() == 0) return list;
+        w = w.toLowerCase();
         for (Word check : Dictionary.getWords()) {
-            if (check.getWord_target().toLowerCase().startsWith(w)) {
+            if (check.getWord_target().toLowerCase().startsWith(w) && list.size() <= 1000) {
                 list.add(check.getWord_target());
-            } else if (w.charAt(0) < check.getWord_target().toLowerCase().charAt(0)) {
+            } else if (w.charAt(0) < check.getWord_target().toLowerCase().charAt(0) || list.size() > 1000) {
                 break;
             }
         }
