@@ -52,9 +52,9 @@ public class DictionaryManagement {
         if (w.length() == 0) return list;
         w = w.toLowerCase();
         for (Word check : Dictionary.getWords()) {
-            if (check.getWord_target().toLowerCase().startsWith(w) && list.size() <= 1000) {
+            if (check.getWord_target().toLowerCase().startsWith(w) && list.size() <= 100) {
                 list.add(check.getWord_target());
-            } else if (w.charAt(0) < check.getWord_target().toLowerCase().charAt(0) || list.size() > 1000) {
+            } else if (w.charAt(0) < check.getWord_target().toLowerCase().charAt(0) || list.size() > 100) {
                 break;
             }
         }

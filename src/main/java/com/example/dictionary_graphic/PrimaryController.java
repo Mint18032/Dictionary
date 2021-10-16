@@ -49,12 +49,16 @@ public class PrimaryController implements Initializable {
     public void search(KeyEvent event) {
         if (searchBox.getText().trim().length() == 0) {
             listView.setOpacity(0);
+            listView.setDisable(true);
             return;
         }
         listView.setOpacity(100);
+        listView.setDisable(false);
         listView.scrollTo(0);
         listView.getItems().clear();
         listView.getItems().addAll(DictionaryManagement.dictionaryRelatedWord(searchBox.getText().trim()));
+        if (listView.getItems().isEmpty())
+            listView.setOpacity(0);
     }
 
     /**
@@ -68,7 +72,6 @@ public class PrimaryController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-//        listView.getItems().addAll(Dictionary.listWordTarget());
         listView.setOpacity(0);
         speak.setOpacity(0);
         webView.setOpacity(0);
@@ -87,13 +90,17 @@ public class PrimaryController implements Initializable {
         if (target == "") {
             webView.setOpacity(100);
             webView.getEngine().loadContent("No word inserted!");
+            listView.setOpacity(0);
+            listView.setDisable(true);
         } else {
             String explain = DictionaryManagement.dictionaryLookup(target);
             if (explain.equals("This word doesn't exist!")) {
                 alert(mouseEvent);
             } else {
-                webView.setOpacity(100);
+                listView.setOpacity(0);
+                listView.setDisable(true);
                 speak.setOpacity(100);
+                webView.setOpacity(100);
                 webView.getEngine().loadContent(explain);
             }
         }
@@ -105,7 +112,6 @@ public class PrimaryController implements Initializable {
     @FXML
     public void searchOnClick(MouseEvent event) {
         target = listView.getSelectionModel().getSelectedItem();
-        speak.setOpacity(100);
         webView.setOpacity(100);
         if (target == null || target.isEmpty()) {
             webView.getEngine().loadContent("Nothing Selected!");
@@ -113,6 +119,9 @@ public class PrimaryController implements Initializable {
             searchBox.setText(target);
             String explain = DictionaryManagement.dictionaryLookup(target);
             webView.getEngine().loadContent(explain);
+            speak.setOpacity(100);
+            listView.setOpacity(0);
+            listView.setDisable(true);
         }
     }
 
@@ -132,6 +141,7 @@ public class PrimaryController implements Initializable {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        updated = false;
     }
 
     /**
@@ -153,15 +163,15 @@ public class PrimaryController implements Initializable {
     }
 
     /**
-     * Updates data and graphic after changes in data.
+     * Updates data and graphic after changes.
      */
     @FXML
     private void update() {
         if (updated) return;
         listView.scrollTo(0);
         listView.getItems().clear();
-        listView.getItems().addAll(Dictionary.listWordTarget());
         listView.setOpacity(0);
+        listView.setDisable(true);
         speak.setOpacity(0);
         searchBox.setText("");
         webView.setOpacity(0);
@@ -203,6 +213,9 @@ public class PrimaryController implements Initializable {
         if (alert.showAndWait().get() == ButtonType.OK) {
             textArea1.setText(target);
             webView.setOpacity(0);
+            listView.setOpacity(0);
+            listView.setDisable(true);
+            speak.setOpacity(0);
             tabPane.getSelectionModel().selectNext();
             searchOnline();
         }
