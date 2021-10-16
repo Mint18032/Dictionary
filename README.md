@@ -11,7 +11,8 @@ A user-friendly dictionary application.
 ## Setup
 
 ### Setup Environment
-* Download MySQL Installer [here](https://dev.mysql.com/downloads) to setup MySQL Server and Workbench (this [video](https://www.youtube.com/watch?v=OM4aZJW_Ojs) might help)
+* Download MySQL Installer [MySQL](https://dev.mysql.com/downloads) to setup MySQL Server and Workbench (this [video](https://www.youtube.com/watch?v=OM4aZJW_Ojs) might help)
+* Download Javafx [Javafx](https://openjfx.io/openjfx-docs/#introduction) to setup Javafx library(this [video](https://www.youtube.com/watch?v=9XJicRt_FaI) might help from 8:15 to 12:13)
 ### Setup Project
 * Open MySQL Workbench and run the SQL script in resources/dictionary.sql to import database (follow this [video](https://youtu.be/uyP46E0UA9I?t=248) from 4:08 to 6:00)
 * In DictionaryManager.java, change the password and url of the database to yours to connect to the database.
