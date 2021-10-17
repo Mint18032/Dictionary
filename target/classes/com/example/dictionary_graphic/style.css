@@ -3,21 +3,14 @@
     -fx-border-color: #000000;
 }
 
-.result {
-    -fx-background-color: #fff;
-    -fx-border-color: #42b6f5;
-}
-
 .button:hover {
   -fx-background-color: #29a3a3;
   -fx-color: #000000;
 }
 
 .tab {
-    -fx-padding: 14px 16px;
+    -fx-padding: 1em 3.35em;
     -fx-background-color: #33cccc;
-    -fx-outline: 0;
-    -fx-border: 0;
     -fx-font-weight: bold;
     -fx-focus-color: transparent;
     -fx-faint-focus-color: transparent;
@@ -25,36 +18,40 @@
 
 .tab:hover {
     -fx-background-color: #29a3a3;
-    -fx-width: 10%;
     -fx-color: gray;
 }
 
 .tab:selected {
-    -fx-background-color: #ffcc00;
-    -fx-display: none;
-    -fx-border: 0;
+    -fx-background-color: #ffff00;
 }
 
-.label {
+.wall {
+    -fx-background-color: #ffff99;
+}
+
+#announce {
+    -fx-font-weight: bold;
     -fx-alignment: center;
 }
 
-#explain {
-    -fx-padding: 0px;
-}
-
-#translate {
-    -fx-background-image: url("/com/example/dictionary_graphic/translate.png");
-}
-
-#custom {
-    -fx-background-image: url("/com/example/dictionary_graphic/custom.png");
-}
-
-#google {
-    -fx-background-image: url("/com/example/dictionary_graphic/google.png");
+#txt {
+    color: #006bb3;
 }
 
 #speak {
-    -fx-background-image: url("/com/example/dictionary_graphic/speak.png");
+    -fx-background-image: url("/com/example/dictionary_graphic/image/speak.png");
+    -fx-background-color: transparent;
+    -fx-border-width: 0;
+}
+
+#translate {
+    -fx-background-image: url("/com/example/dictionary_graphic/image/translate.png");
+}
+
+#custom {
+    -fx-background-image: url("/com/example/dictionary_graphic/image/custom.png");
+}
+
+#google {
+    -fx-background-image: url("/com/example/dictionary_graphic/image/google.png");
 }

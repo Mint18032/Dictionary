@@ -1,7 +1,13 @@
 <component name="libraryTable">
   <library name="lib">
-    <CLASSES />
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/mysql-connector-java-8.0.26.jar!/" />
+      <root url="file://$PROJECT_DIR$/lib/freetts-1.2/lib" />
+      <root url="file://$PROJECT_DIR$/lib/freetts-1.2/bin" />
+    </CLASSES>
     <JAVADOC />
     <SOURCES />
+    <jarDirectory url="file://$PROJECT_DIR$/lib/freetts-1.2/bin" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/lib/freetts-1.2/lib" recursive="false" />
   </library>
 </component>
