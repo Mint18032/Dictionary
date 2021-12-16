@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="210.0" prefWidth="339.0" stylesheets="@/com/example/dictionary_graphic/styleSheet/style.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dictionary_graphic.controllers.SecondaryController">
+   <children>
+      <Label fx:id="announce" layoutX="2.0" layoutY="10.0" prefHeight="35.0" prefWidth="335.0" text="You can fix word here:" />
+      <TextField fx:id="word" layoutX="19.0" layoutY="48.0" prefHeight="35.0" prefWidth="302.0" promptText="Type the word here." />
+      <TextField fx:id="explain" layoutX="19.0" layoutY="100.0" prefHeight="35.0" prefWidth="302.0" promptText="Type definition here." />
+      <Button layoutX="154.0" layoutY="154.0" mnemonicParsing="false" onMouseClicked="#onFixClick" text="Fix" />
+   </children>
+</AnchorPane>

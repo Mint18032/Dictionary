@@ -1,4 +1,4 @@
-# Dictionary_Graphic
+Dictionary_Graphic
 ---
 
 ## Developers
@@ -70,7 +70,9 @@ Type a word in the textfield then click "Delete".
 The label will tell you if the process is success or not.
 
 ## Captures and Video
-[DEMO VIDEO](https://youtu.be/rbf4NzZGscM)
+Please watch our [DEMO VIDEO](https://youtu.be/rbf4NzZGscM) on YouTube.
+
+For more screenshots, open [screenshots directory](https://github.com/Mint18032/Dictionary/screenshots).
 
 ![search-clicked](https://user-images.githubusercontent.com/79392486/137594355-010a87c8-2bcb-44e4-a0aa-cf41f4bf5d57.png)
 ![googleAPI-VI-EN](https://user-images.githubusercontent.com/79392486/137505432-c16d93cd-ebf2-4c2e-98b8-ce165746c200.png)

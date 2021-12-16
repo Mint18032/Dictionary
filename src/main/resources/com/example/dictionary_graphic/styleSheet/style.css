@@ -1,0 +1,57 @@
+.button {
+    -fx-background-color: #33cccc;
+    -fx-border-color: #000000;
+}
+
+.button:hover {
+  -fx-background-color: #29a3a3;
+  -fx-color: #000000;
+}
+
+.tab {
+    -fx-padding: 1em 3.35em;
+    -fx-background-color: #33cccc;
+    -fx-font-weight: bold;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+.tab:hover {
+    -fx-background-color: #29a3a3;
+    -fx-color: gray;
+}
+
+.tab:selected {
+    -fx-background-color: #ffff00;
+}
+
+.wall {
+    -fx-background-color: #ffff99;
+}
+
+#announce {
+    -fx-font-weight: bold;
+    -fx-alignment: center;
+}
+
+#txt {
+    color: #006bb3;
+}
+
+#speak {
+    -fx-background-image: url("/com/example/dictionary_graphic/image/speak.png");
+    -fx-background-color: transparent;
+    -fx-border-width: 0;
+}
+
+#translate {
+    -fx-background-image: url("/com/example/dictionary_graphic/image/translate.png");
+}
+
+#custom {
+    -fx-background-image: url("/com/example/dictionary_graphic/image/custom.png");
+}
+
+#google {
+    -fx-background-image: url("/com/example/dictionary_graphic/image/google.png");
+}

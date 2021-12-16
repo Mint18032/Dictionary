@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.web.*?>
+
+<VBox alignment="CENTER" spacing="20.0" stylesheets="@/com/example/dictionary_graphic/styleSheet/style.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dictionary_graphic.controllers.PrimaryController">
+   <children>
+        <TabPane fx:id="tabPane" prefHeight="462.0" prefWidth="502.0" tabClosingPolicy="UNAVAILABLE">
+            <Tab fx:id="translate" onSelectionChanged="#update" text="        Translate">
+                <AnchorPane minHeight="10.0" minWidth="0.0" prefHeight="326.0" prefWidth="422.0" styleClass="wall">
+                    <ButtonBar accessibleRole="TEXT_AREA" layoutX="14.0" layoutY="14.0" prefHeight="35.0" prefWidth="400.0" />
+                    <TextField fx:id="searchBox" layoutX="10.0" layoutY="14.0" onKeyReleased="#search" prefHeight="35.0" prefWidth="392.0" promptText="Type here to search." />
+                    <WebView fx:id="webView" layoutX="10.0" layoutY="53.0" prefHeight="347.0" prefWidth="482.0" />
+                    <Button fx:id="speak" layoutX="449.0" layoutY="59.0" onMouseClicked="#textToSpeech" prefHeight="9.0" prefWidth="26.0" styleClass="button" text=" " />
+                      <Button layoutX="407.0" layoutY="14.0" onMouseClicked="#onSearchButtonClick" prefHeight="33.0" prefWidth="83.0" styleClass="button" text="Search">
+                  <font>
+                     <Font name="System Bold" size="12.0" />
+                  </font></Button>
+                    <ListView fx:id="listView" layoutX="10.0" layoutY="51.0" onMouseClicked="#searchOnClick" pickOnBounds="false" prefHeight="135.0" prefWidth="482.0" />
+                </AnchorPane>
+            </Tab>
+            <Tab fx:id="google" text="       Paragraph">
+                <AnchorPane minHeight="10.0" minWidth="0.0" prefHeight="422.0" prefWidth="421.0" styleClass="wall">
+                    <children>
+                        <Text fx:id="text1" layoutX="10.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="English">
+                            <font>
+                                <Font name="System Bold" size="12.0" />
+                            </font>
+                        </Text>
+                        <Text fx:id="text2" layoutX="10.0" layoutY="225.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vietnamese">
+                            <font>
+                                <Font name="System Bold" size="12.0" />
+                            </font>
+                        </Text>
+                        <TextArea fx:id="textArea1" layoutX="10.0" layoutY="19.0" prefHeight="163.0" prefWidth="482.0" promptText="Type here." wrapText="true">
+                     <font>
+                        <Font name="Times New Roman" size="14.0" />
+                     </font></TextArea>
+                        <Button fx:id="language" layoutX="324.0" layoutY="189.0" onAction="#changeLanguage" prefHeight="31.0" prefWidth="75.0" styleClass="button" text="VI-EN" textAlignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Button>
+                        <Button layoutX="416.0" layoutY="189.0" onAction="#searchOnline" prefHeight="31.0" prefWidth="75.0" styleClass="button" text="Translate" textAlignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Button>
+                        <WebView fx:id="webView2" layoutX="10.0" layoutY="229.0" prefHeight="176.0" prefWidth="483.0" />
+                    </children>
+                </AnchorPane>
+            </Tab>
+            <Tab fx:id="custom" onSelectionChanged="#update" text="           Custom">
+                <AnchorPane prefHeight="371.0" prefWidth="422.0" styleClass="wall">
+                    <children>
+                        <Button layoutX="133.0" layoutY="62.0" mnemonicParsing="false" onMouseClicked="#addNewWord" prefHeight="64.0" prefWidth="235.0" styleClass="button" text="Add new word" textAlignment="CENTER" textOverrun="CENTER_WORD_ELLIPSIS">
+                            <font>
+                                <Font name="Berlin Sans FB" size="18.0" />
+                            </font>
+                        </Button>
+                        <Button layoutX="133.0" layoutY="142.0" mnemonicParsing="false" onMouseClicked="#fixWord" prefHeight="64.0" prefWidth="235.0" styleClass="button" text="Fix word" textAlignment="CENTER" textOverrun="CENTER_WORD_ELLIPSIS">
+                            <font>
+                                <Font name="Berlin Sans FB" size="18.0" />
+                            </font>
+                        </Button>
+                        <Button layoutX="133.0" layoutY="220.0" mnemonicParsing="false" onMouseClicked="#deleteWord" prefHeight="64.0" prefWidth="235.0" styleClass="button" text="Delete word" textAlignment="CENTER" textOverrun="CENTER_WORD_ELLIPSIS">
+                            <font>
+                                <Font name="Berlin Sans FB" size="18.0" />
+                            </font>
+                        </Button>
+                        <ImageView fitHeight="52.0" fitWidth="52.0" layoutX="226.0" layoutY="313.0">
+                            <image>
+                                <Image url="@/com/example/dictionary_graphic/image/d1.png" />
+                            </image>
+                        </ImageView>
+                    </children>
+                </AnchorPane>
+            </Tab>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+        </TabPane>
+   </children>
+</VBox>

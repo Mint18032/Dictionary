@@ -1,5 +1,6 @@
 package com.example.dictionary_graphic;
 
+import com.example.dictionary_graphic.managers.DictionaryManager;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -16,7 +17,7 @@ public class Main extends Application {
      */
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("primary-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("view/primary-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         logo = new Image("/com/example/dictionary_graphic/image/logo.jpg");
         stage.getIcons().add(logo);
